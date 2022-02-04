@@ -40,7 +40,7 @@ function isLowerCase(letter) {
 console.log("Check: ", isLowerCase("Check"));
 console.log("check: ", isLowerCase("check"));
 console.log("ChEcK: ", isLowerCase("ChEcK"));
-console.log("CAPITAL", isLowerCase("CAPITAL"));
+console.log("CAPITAL: ", isLowerCase("CAPITAL"));
 
 //Function takes a number and multiplies it by two
 function double(n) {
