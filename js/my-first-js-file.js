@@ -26,5 +26,6 @@ while(!isAwesome) {
 }
 
 if (isAwesome) {
+    alert("Stay awesome, man (or other type of person)");
     console.log("Always good to hear! Stay awesome or else");
 }
