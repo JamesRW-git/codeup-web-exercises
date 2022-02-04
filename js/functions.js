@@ -82,7 +82,7 @@ console.log(random + " is equal to 2: " + isTwo(random));
  * COMPLETE
  */
 
-let billWhat = prompt("How much is the bill?");
+let billWhat = parseFloat(prompt("How much is the bill?"));
 let tipWhat = parseInt(prompt("What percentage would you like to tip (ex. 20 for 20%)"))/100;
 
 function calculateTip(tipPercentage, billAmount) {
