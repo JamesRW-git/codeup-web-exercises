@@ -13,9 +13,9 @@ alert("Really? " + userFavColor + " is my favorite color, too!");*/
 //Second Exercise
 
 /*let dailyPrice = 3.00;
-let lilMermaid = Number(prompt("How many days do you want to keep The Little Mermaid?")) * dailyPrice;
-let broBear = Number(prompt("How many days do you want to keep Brother Bear?")) * dailyPrice;
-let hercules = Number(prompt("How many days do you want to keep Hercules?")) * dailyPrice;
+let lilMermaid = parseInt(prompt("How many days do you want to keep The Little Mermaid?")) * dailyPrice;
+let broBear = parseInt(prompt("How many days do you want to keep Brother Bear?")) * dailyPrice;
+let hercules = parseInt(prompt("How many days do you want to keep Hercules?")) * dailyPrice;
 
 let totalCost = lilMermaid + broBear + hercules;
 
@@ -23,17 +23,17 @@ alert("Thank you! Your total will be $" + totalCost);*/
 
 //Third Exercise
 
-/*let googleTime = Number(prompt("How many hours will you work for Google this week?")) * 400;
-let amazonTime = Number(prompt("How many hours will you work for Amazon this week?")) * 380;
-let metaTime = Number(prompt("How many hours are you going to worship The Zuc this week?")) * 350;
+let googleTime = parseInt(prompt("How many hours will you work for Google this week?")) * 400;
+let amazonTime = parseInt(prompt("How many hours will you work for Amazon this week?")) * 380;
+let metaTime = parseInt(prompt("How many hours are you going to worship The Zuc this week?")) * 350;
 let totalEarn = googleTime + amazonTime + metaTime;
-alert("You will earn $" + totalEarn + " this week.");*/
+alert("You will earn $" + totalEarn + " this week.");
 
 //Fourth Exercise
 
-/*let maxClassSize = Number(prompt("What's the max class size?"));
+/*let maxClassSize = parseInt(prompt("What's the max class size?"));
 console.log(maxClassSize);
-let currentClassSize = Number(prompt("How many people are in the class currently?")) + 1;
+let currentClassSize = parseInt(prompt("How many people are in the class currently?")) + 1;
 console.log(currentClassSize);
 let conflictOrNo = confirm("Click OK if this class does not conflict with any other scheduled class.");
 console.log(conflictOrNo);
@@ -49,7 +49,7 @@ if (conflictOrNo && (currentClassSize <= maxClassSize)) {
 //Fifth Exercise
 
 let productMin = 2;
-let productsInCart = Number(prompt("How many items are you getting?"));
+let productsInCart = parseInt(prompt("How many items are you getting?"));
 let expirationDate = prompt("What is the expiration date of the offer you'd like to use? (MM/DD/YYYY)");
 let inputDate = new Date(expirationDate);
 let todaysDate = new Date();
