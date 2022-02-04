@@ -23,11 +23,11 @@ alert("Thank you! Your total will be $" + totalCost);*/
 
 //Third Exercise
 
-let googleTime = parseInt(prompt("How many hours will you work for Google this week?")) * 400;
+/*let googleTime = parseInt(prompt("How many hours will you work for Google this week?")) * 400;
 let amazonTime = parseInt(prompt("How many hours will you work for Amazon this week?")) * 380;
 let metaTime = parseInt(prompt("How many hours are you going to worship The Zuc this week?")) * 350;
 let totalEarn = googleTime + amazonTime + metaTime;
-alert("You will earn $" + totalEarn + " this week.");
+alert("You will earn $" + totalEarn + " this week.");*/
 
 //Fourth Exercise
 
