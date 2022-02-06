@@ -242,4 +242,173 @@ function hasUpperCase(string) {
 console.log('Cool. So far so good (more or less)! Does this one have ANY capital letters? ' + hasUpperCase('Cool. So far so good (more or less)! Does this one have ANY capital letters?'));
 console.log('and this one? ' + hasUpperCase('and this one?'));
 console.log('Casey said you need to sleep. Go to bed, fool. And yes this one is ' + hasUpperCase('Casey said you need to sleep. Go to bed, fool. And yes this one is'));
-//Function Drill Nineteen:
+
+
+//Function Drill Nineteen: isSpace
+
+function isSpace(letter) {
+    return letter == ' ';
+}
+
+console.log('Is " " a space? It\'s ' + isSpace(' '));
+console.log('Is "8" a space? It\'s ' + isSpace('8'));
+console.log('Is "k" a space? It\'s ' + isSpace('k'));
+console.log('Is "W" a space? It\'s ' + isSpace('W'));
+
+//Function Drill Twenty: isZero(number)
+function isZero(number) {
+    if (number == 0) {
+        console.log('Yep. ' + number + ' is a zero alright.');
+    } else console.log('You know what? I don\'t think ' + number + ' is a zero.');
+}
+
+isZero('0');
+isZero('zero');
+isZero('O');
+isZero('K');
+isZero(9);
+isZero(0);
+
+//Function Drill Twenty-One: notZero(number)
+function notZero(number) {
+    if (number != 0) {
+        console.log('Yep. ' + number + ' isn\'t a zero.');
+    } else {
+        console.log('You know what? ' + number + ' is not not a zero.');
+    }
+}
+
+notZero('0');
+notZero('zero');
+notZero('O');
+notZero('K');
+notZero(9);
+notZero(0);
+
+//Function Drill Twenty-Two: lowerCase(string)
+function lowerCase(string) {
+    console.log(string.toLowerCase());
+}
+
+lowerCase('I\'m not sure what this function was supposed to actually do.');
+lowerCase('I THINK IT WAS SUPPOSED TO MAKE EVERYTHING LOWERCASE');
+lowerCase('I\'m not ONE HUNDRED percent sure, though.');
+
+//Function Drill Twenty-Three: double(n)
+function double(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let doubled = n * 2;
+        console.log(n + ' times 2 is ' + doubled);
+    }
+}
+
+double(2);
+double(.5);
+double(210);
+double("5");
+double('seven');
+double('~');
+
+//Function Drill Twenty-Three: triple(n)
+function triple(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let tripled = n * 3;
+        console.log(n + ' times 3 is ' + tripled);
+    }
+}
+
+triple(2);
+triple(.5);
+triple(210);
+triple("5");
+triple('seven');
+triple('~');
+
+//Function Drill Twenty-Four: quadruple(n)
+function quadruple(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let quadrupled = n * 4;
+        console.log(n + ' times 4 is ' + quadrupled);
+    }
+}
+
+quadruple(2);
+quadruple(.5);
+quadruple(210);
+quadruple("5");
+quadruple('seven');
+quadruple('~');
+
+//Function Drill Twenty-Five: half(n)
+function half(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let halved = n * .5;
+        console.log(n + ' halved is ' + halved);
+    }
+}
+
+half(2);
+half(.5);
+half(210);
+half("5");
+half('seven');
+half('~');
+
+//Function Drill Twenty-Six: subtract(a, b)
+function subtract(a, b) {
+    if (isNaN(a) || isNaN(b)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + a + ' or ' + b + ' is.');
+    } else {
+        let subtracted = a - b;
+        console.log(a + ' minus ' + b + ' is ' + subtracted);
+    }
+}
+
+subtract(2 , 5);
+subtract(10, 1);
+subtract(675, 255);
+subtract("5", "4");
+subtract('seven', 'two');
+subtract('~', 'L');
+
+//Function Drill Twenty-Seven: multiple(a, b)
+function multiple(a, b) {
+    if (isNaN(a) || isNaN(b)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + a + ' or ' + b + ' is.');
+    } else {
+        let multiplied = a * b;
+        console.log('Did you know that ' + a + ' times ' + b + ' equals ' + multiplied + '? Crazy right?');
+    }
+}
+
+multiple(2, 5);
+multiple(10, 1);
+multiple('2', 210);
+multiple('~', '7');
+multiple(.25, 1769);
+
+//Functions Drill Twenty-Eight: divide(a, b)
+function divide(a, b) {
+    if (isNaN(a) || isNaN(b)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + a + ' or ' + b + ' is.');
+    } else {
+        let divided = a / b;
+        console.log('Did you know that ' + a + ' divided by ' + b + ' equals ' + divided + '? Crazy right?');
+    }
+}
+
+divide(2, 5);
+divide(10, 1);
+divide('2', 210);
+divide('~', '7');
+divide(.25, 1769);
+
+
