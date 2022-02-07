@@ -23,10 +23,10 @@ Be sure to log to the user if they can or cannot get a rideshare*/
 function getToDestination(age, isInsured, hasCar, isDrunk) {
     if (age >= 16 && isInsured && hasCar && !isDrunk) {
         console.log('Drive yourself.')
-    } else if (age >= 16 && isInsured && hasCar && isDrunk) {
-        console.log('Please don\'t drive, you idiot. Rideshare doesn\'t want you. Walk.');
-    } else if (canGetRideshare(true, true)) {
+    } else if (canGetRideshare(true, false)) {
         console.log('You should get a ride. There appears to be one available.');
+    } else if (age >= 16 && isInsured && hasCar || isDrunk) {
+        console.log('Please don\'t drive, you idiot. Rideshare is unavailable. Call a friend or walk.');
     } else {
         console.log('You should call a friend for a ride or you will be stuck here FOREVER.');
     }
@@ -44,6 +44,7 @@ getToDestination(16, false, false, true);
 getToDestination(35, true, true, true);
 getToDestination(21, true, true, false);
 getToDestination(80, true, false, true);
+getToDestination(80, true, false, false);
 
 
 
