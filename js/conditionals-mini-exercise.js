@@ -34,9 +34,6 @@ function getToDestination(age, isInsured, hasCar, isDrunk) {
 
 function canGetRideshare(driverNearby, enoughMoneys) {
     if (driverNearby && enoughMoneys) {
-        return true
-    } else {
-        return false
     }
 }
 
