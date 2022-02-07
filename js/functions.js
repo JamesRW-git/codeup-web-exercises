@@ -25,15 +25,19 @@
  * COMPLETE
  */
 
-let myName = prompt("Hello, USER. What is your human given name?");
+
 
 function sayHello(name){
     return "Hello, " + name;
 }
-console.log(sayHello(myName));
 
-let helloMessage = sayHello(myName);
+console.log(sayHello('codeup'));
+
+let helloMessage = sayHello('James');
 console.log(helloMessage);
+
+let myName = 'James';
+console.log(sayHello(myName));
 
 /**
  * TODO:
