@@ -19,7 +19,7 @@ function getToDestination(age, isInsured, hasCar, canGetRideshare, isDrunk) {
         console.log('Drive yourself.')
     } else if (age > 16 && isInsured && hasCar && isDrunk) {
         console.log('Please don\'t drive, you idiot.');
-    } else if (age < 16 || !isInsured || !hasCar || canGetRideshare) {
+    } else if (age < 16 || !isInsured || !hasCar && canGetRideshare) {
         console.log('You should get a ride. There appears to be one available.');
     } else {
         console.log('You should call a friend for a ride or you will be stuck here FOREVER.');
@@ -37,3 +37,18 @@ It will determine if there are drivers nearby and the person has enough money fo
 Now, when you call getToDestination(), instead of passing in a canGetRideShare parameter
 Call canGetRideshare() in the else if after !isLegalDriver &&...
 Be sure to log to the user if they can or cannot get a rideshare*/
+
+
+
+function canGetRideshare(driverNearby, enoughMoneys) {
+    if (driverNearby && enoughMoneys) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+getToDestination(80, true, false, canGetRideshare(true, true), true);
+getToDestination(80, true, false, canGetRideshare(true, false), true);
+getToDestination(80, true, false, canGetRideshare(false, false), true);
