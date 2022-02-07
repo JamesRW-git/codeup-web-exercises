@@ -25,7 +25,7 @@ function getToDestination(age, isInsured, hasCar, isDrunk) {
         console.log('Drive yourself.')
     } else if (age > 16 && isInsured && hasCar && isDrunk) {
         console.log('Please don\'t drive, you idiot.');
-    } else if (age < 16 || !isInsured || !hasCar && canGetRideshare(true, false)) {
+    } else if ((age < 16 || !isInsured || !hasCar) && canGetRideshare(true, true)) {
         console.log('You should get a ride. There appears to be one available.');
     } else {
         console.log('You should call a friend for a ride or you will be stuck here FOREVER.');
@@ -34,6 +34,9 @@ function getToDestination(age, isInsured, hasCar, isDrunk) {
 
 function canGetRideshare(driverNearby, enoughMoneys) {
     if (driverNearby && enoughMoneys) {
+        return true;
+    } else {
+        return false
     }
 }
 
@@ -41,5 +44,7 @@ getToDestination(16, false, false, true);
 getToDestination(35, true, true, true);
 getToDestination(21, true, true, false);
 getToDestination(80, true, false, true);
+
+
 
 
