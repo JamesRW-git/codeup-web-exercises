@@ -20,7 +20,7 @@ Call canGetRideshare() in the else if after !isLegalDriver &&...
 Be sure to log to the user if they can or cannot get a rideshare*/
 
 
-function getToDestination(age, isInsured, hasCar, isDrunk) {
+/*function getToDestination(age, isInsured, hasCar, isDrunk) {
     if (age >= 16 && isInsured && hasCar && !isDrunk) {
         console.log('Drive yourself.');
     } else if (canGetRideshare(true, true)) {
@@ -44,7 +44,45 @@ getToDestination(16, false, false, true);
 getToDestination(35, true, true, true);
 getToDestination(21, true, true, false);
 getToDestination(80, true, false, true);
-getToDestination(80, true, false, false);
+getToDestination(80, true, false, false);*/
+
+/*function checkWeather(todaysWeather) {
+    if (todaysWeather.toLowerCase() === 'snowing') {
+        console.log('Please stay inside.');
+    } else if (todaysWeather.toLowerCase() === 'raining') {
+        console.log('Grab an umbrella-ella-ella.');
+    } else if (todaysWeather.toLowerCase() === 'hailing') {
+        console.log('Cover your car. There\'s hail afoot.');
+    } else {
+        console.log('Go outside. It\'s sunny.');
+    }
+}
+
+checkWeather('snowing');
+checkWeather('bs response');
+checkWeather('HAILING');*/
+
+//Alternate to previous if/else structure but instead using switch cases
+function checkWeather(todaysWeather) {
+    todaysWeather = todaysWeather.toLowerCase();
+    switch (todaysWeather) {
+        case "snowing":
+            console.log('Please stay inside. It\'s snowing.');
+            break;
+        case 'raining':
+            console.log('Grab an umbrella.');
+            break;
+        case 'hailing':
+            console.log("Cover your car. Hail is afoot.");
+            break;
+        default:
+            console.log('Go play outside.');
+            break;
+    }}
+
+checkWeather('hailing');
+checkWeather('SNOWING');
+
 
 
 
