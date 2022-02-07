@@ -12,25 +12,6 @@ If the rider is not over 16, has no insurance, OR has no car but they CAN get a 
 rideshare service
 If the rider meets none of the above, they should call a friend for a ride!
     This getToDestination should not return any value, but rather console log based on the conditions met.*/
-
-
-function getToDestination(age, isInsured, hasCar, canGetRideshare, isDrunk) {
-    if (age > 16 && isInsured && hasCar && !isDrunk) {
-        console.log('Drive yourself.')
-    } else if (age > 16 && isInsured && hasCar && isDrunk) {
-        console.log('Please don\'t drive, you idiot.');
-    } else if (age < 16 || !isInsured || !hasCar && canGetRideshare) {
-        console.log('You should get a ride. There appears to be one available.');
-    } else {
-        console.log('You should call a friend for a ride or you will be stuck here FOREVER.');
-    }
-}
-
-getToDestination(16, false, false, true, true);
-getToDestination(35, true, true, true, true);
-getToDestination(21, true, true, false, false);
-getToDestination(80, true, false, true, true);
-
 /*getToDestination, part 2
 Create a function called canGetRideshare() which will RETURN a boolean
 It will determine if there are drivers nearby and the person has enough money for the ride
@@ -39,6 +20,17 @@ Call canGetRideshare() in the else if after !isLegalDriver &&...
 Be sure to log to the user if they can or cannot get a rideshare*/
 
 
+function getToDestination(age, isInsured, hasCar, isDrunk) {
+    if (age > 16 && isInsured && hasCar && !isDrunk) {
+        console.log('Drive yourself.')
+    } else if (age > 16 && isInsured && hasCar && isDrunk) {
+        console.log('Please don\'t drive, you idiot.');
+    } else if (age < 16 || !isInsured || !hasCar && canGetRideshare(true, false)) {
+        console.log('You should get a ride. There appears to be one available.');
+    } else {
+        console.log('You should call a friend for a ride or you will be stuck here FOREVER.');
+    }
+}
 
 function canGetRideshare(driverNearby, enoughMoneys) {
     if (driverNearby && enoughMoneys) {
@@ -48,7 +40,9 @@ function canGetRideshare(driverNearby, enoughMoneys) {
     }
 }
 
+getToDestination(16, false, false, true);
+getToDestination(35, true, true, true);
+getToDestination(21, true, true, false);
+getToDestination(80, true, false, true);
 
-getToDestination(80, true, false, canGetRideshare(true, true), true);
-getToDestination(80, true, false, canGetRideshare(true, false), true);
-getToDestination(80, true, false, canGetRideshare(false, false), true);
+
