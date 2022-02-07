@@ -116,9 +116,10 @@ alert("You should leave $" + calculateTip(tipWhat, billWhat) + " as a tip.");
  * > applyDiscount(45.99, 0.12) // 40.4712
  * COMPLETE
  */
-function applyDiscount(price, discount) {
-    let discountAmount = price * discount;
-    return price - discountAmount;
+function applyDiscount(originalPrice, discountPercent) {
+    let discountAmount = originalPrice * discountPercent;
+    return originalPrice - discountAmount;
 }
 
 console.log(applyDiscount(100, .2));
+console.log(applyDiscount(2000, .51));
