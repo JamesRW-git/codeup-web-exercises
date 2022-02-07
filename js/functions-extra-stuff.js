@@ -411,4 +411,131 @@ divide('2', 210);
 divide('~', '7');
 divide(.25, 1769);
 
+//Functions Drill Twenty-Nine: remainder(a, b)
+function remainder(a , b) {
+    if (isNaN(a) || isNaN(b)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + a + ' or ' + b + ' is.');
+    } else {
+        let remains = a % b;
+        console.log('The remainder after dividing ' + a + ' by ' + b + ' is ' + remains);
+    }
+}
 
+
+remainder(5, 2);
+remainder(9, 9);
+remainder(9, 3);
+remainder(100, 23);
+remainder('Chuck Norris');
+
+//Functions Drill Thirty: modulo(a, b)...also how is this one different than the last one?
+//I dunno
+function modulo(a, b) {
+    if (isNan(a) || isNan(b)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + a + ' or ' + b + ' is.');
+    } else {
+        let remains = a % b;
+        console.log('The remainder after dividing ' + a + ' by ' + b + ' is ' + remains);
+    }
+}
+
+remainder(87, 2);
+remainder(28371, 9);
+remainder(9, 3);
+remainder(1000003, 23);
+remainder('James', ' 80085');
+
+//Functions Drill Thirty-One: cube(n)
+function cube(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let cubed = n * n * n;
+        console.log(n + ' cubed is ' + cubed);
+    }
+}
+
+cube(1);
+cube('F');
+cube(' ');
+cube('91');
+cube(100*2);
+
+//Functions Drill Thirty-Two: squareRoot(n)
+function squareRoot(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let rooted = Math.sqrt(n);
+        console.log('The square root of ' + n + ' is ' + rooted);
+    }
+}
+
+squareRoot(9);
+squareRoot(8675309);
+squareRoot('Method Man');
+squareRoot('785');
+
+//Functions Drill Thirty-Three: cubeRoot(n)
+function cubeRoot(n) {
+    if (isNaN(n)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + n + ' is.');
+    } else {
+        let rooted = Math.cbrt(n);
+        console.log('The cube root of ' + n + ' is ' + rooted);
+    }
+}
+
+cubeRoot(9);
+cubeRoot(8675309);
+cubeRoot('Method Man');
+cubeRoot('785');
+
+//Functions Drill Thirty-Four: invertSign(number)
+function invertSign(number) {
+    if (isNaN(number)) {
+        console.log(!(isNaN(number)));
+    }
+     else {
+        let inverted = number * -1;
+        console.log('The opposite of ' + number + ' is ' + inverted)
+    }
+}
+
+invertSign(-5);
+invertSign(5);
+invertSign('J');
+invertSign('7900');
+
+//Functions Drill Thirty-Five: degreeToRadians(number)
+//Math stuff: 1° × π/180 = 0.01745rad
+
+function degreesToRadians(number) {
+    if (isNaN(number)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + number + ' is.');
+    } else {
+        let rToDConverted = number * Math.PI / 180;
+        console.log(number + ' degrees converted to radians is ' + rToDConverted + 'rad');
+    }
+}
+
+degreesToRadians(9);
+degreesToRadians(8675309);
+degreesToRadians('Method Man');
+degreesToRadians('785');
+
+//Functions Drill Thirty-Six: radianstoDegrees(number)
+//Math stuff: 1rad × 180/π = 57.296°
+function radiansToDegrees(number) {
+    if (isNaN(number)) {
+        console.log('Hey, man. I can only do so much. Please give me numbers. Not whatever ' + number + ' is.');
+    } else {
+        let dToRConverted = number * 180 / Math.PI;
+        console.log(number + ' radians converted to degrees is ' + dToRConverted + ' degrees');
+    }
+}
+
+radiansToDegrees(9);
+radiansToDegrees(8675309);
+radiansToDegrees('Method Man');
+radiansToDegrees('785');
