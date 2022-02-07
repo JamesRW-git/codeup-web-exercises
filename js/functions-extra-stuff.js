@@ -539,3 +539,50 @@ radiansToDegrees(9);
 radiansToDegrees(8675309);
 radiansToDegrees('Method Man');
 radiansToDegrees('785');
+
+//Functions Drill Thirty-Seven: isBlank(input)
+//function isBlank(input) {
+//
+//}
+
+//Functions Drill Thirty-Eight: trim(string)
+function trim(string) {
+    if ((typeof string) === 'string') {
+        console.log(string.trim());
+    } else {
+        console.log(string + '? No way. Give me a string and I\'ll do it but otherwise no.');
+    }
+}
+
+trim('      Hello    ');
+trim(7);
+trim('   <-----NO WHITESPACE IF WORKING----->         ');
+
+//Functions Drill Thirty-Nine: areEqual(input1, input2)
+function areEqual(input1, input2) {
+    if (input1 == input2) {
+        console.log('Yep. ' + input1 + ' and ' + input2 + ' are equal, even if not identical inputs.');
+    } else {
+        console.log('Nope. ' + input1 + ' and ' + input2 + ' are not equal.');
+    }
+}
+
+areEqual('5', 5);
+areEqual(19, 19);
+areEqual('Thank you', 'Thank you');
+areEqual('Blah', 'POTUS');
+areEqual(275, 6234);
+
+//Functions Drill Forty: areIdentical(input1, input2)
+function areIdentical(input1, input2) {
+    if (input1 === input2) {
+        console.log('Yep. ' + input1 + ' and ' + input2 + ' are truly identical inputs.');
+    } else {
+        console.log('Nope. ' + input1 + ' and ' + input2 + ' might be equal, but are not identical inputs.');
+    }
+}
+
+areIdentical('Snoop D-O-double-G', 'Snoop Dogg');
+areIdentical(7, '7');
+areIdentical(740+1, 740+1);
+areIdentical('Ghostface Killah', 'Ghostface Killah');
