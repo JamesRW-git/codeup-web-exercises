@@ -117,9 +117,8 @@ alert("You should leave $" + calculateTip(tipWhat, billWhat) + " as a tip.");
  * COMPLETE
  */
 function applyDiscount(price, discount) {
-    return price * discount;
+    let discountAmount = price * discount;
+    return price - discountAmount;
 }
 
-let originalPrice = 100;
-let discountPercent = .2;
-console.log(applyDiscount(originalPrice, discountPercent));
+console.log(applyDiscount(100, .2));
