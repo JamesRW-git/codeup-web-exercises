@@ -77,47 +77,39 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * function to show it to the user.
  * COMPLETE
  */
-//console logs and alerts are unnecessary...could just alert the output at the end. Will fix
+
 //function analyzeColor(color) {
 //    color = color.toLowerCase();
 //    switch (color) {
 //        case 'blue':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'A clear sky is often blue';
 //            break;
 //        case 'green':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'Healthy grass is green';
 //            break;
 //        case 'yellow':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'Homer Simpson is yellow';
 //            break;
 //        case 'purple':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'Purple is a royal color';
 //            break;
 //        case 'black':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'Black is an absence of color';
 //            break;
 //        case 'white':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'White is a mixture of all colors';
 //            break;
 //        case 'red':
-//            alert(color + ' is a color I was prepared for.');
-//            console.log(color + ' is a color I was prepared for.');
+//            return 'Red is not a color you want to see leaving your body';
 //            break;
 //        default:
-//            alert('I was not prepared for the input of ' + color);
-//            console.log('I was not prepared for the input of ' + color);
+//            return 'I was not prepared for the input of ' + color;
 //            break;
 //    }
 //}
 //
 //var userColor = prompt('Please enter a color');
-//analyzeColor(userColor);
+//alert(analyzeColor(userColor));
 
 
 
@@ -154,40 +146,40 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // Generate a random number between 0 and 6
 //var luckyNumber = Math.floor(Math.random() * 6);
 
-//same as previous
+//Works, but still provides an 'undefined' result if you input a luckyNumber outside 1-5
 
-//let userLuckyNum = parseInt(prompt('What was your lucky number, lucky guy/lady'));
-//let userTotalBill = parseFloat(prompt('What was your total bill?'));
-//
-//function calculateTotal(luckyNumber, totalAmount) {
-//    luckyNumber = parseInt(userLuckyNum);
-//    totalAmount = parseFloat(userTotalBill);
-//    switch(luckyNumber) {
-//        case luckyNumber = 0:
-//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + totalAmount);
-//            break;
-//        case luckyNumber = 1:
-//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .9));
-//            break;
-//        case luckyNumber = 2:
-//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .75));
-//            break;
-//        case luckyNumber = 3:
-//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .65));
-//            break;
-//        case luckyNumber = 4:
-//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .5));
-//            break;
-//        case luckyNumber = 5:
-//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * 0));
-//            break;
-//        default:
-//            alert('Please go back and input a Lucky Number between 1 and 5');
-//            break;
-//    }
-//}
-//
-//calculateTotal(userLuckyNum, userTotalBill) // alerts user to total before and after discount
+function calculateTotal(luckyNumber, totalAmount) {
+    luckyNumber = parseInt(userLuckyNum);
+    totalAmount = parseFloat(userTotalBill);
+    switch(luckyNumber) {
+        case luckyNumber = 0:
+            return totalAmount;
+            break;
+        case luckyNumber = 1:
+            return totalAmount * .9;
+            break;
+        case luckyNumber = 2:
+            return totalAmount * .75;
+            break;
+        case luckyNumber = 3:
+            return totalAmount * .65;
+            break;
+        case luckyNumber = 4:
+            return totalAmount * .5;
+            break;
+        case luckyNumber = 5:
+            return 0;
+            break;
+        default:
+            alert('Please go back and input a Lucky Number between 1 and 5');
+            break;
+    }
+}
+
+let userLuckyNum = parseInt(prompt('What was your lucky number, lucky guy/lady'));
+let userTotalBill = parseFloat(prompt('What was your total bill?'));
+
+alert('Your total bill is $' + calculateTotal(userLuckyNum, userTotalBill)) // alerts user to total before and after discount
 //calculateTotal(0, 100); // returns 100
 //calculateTotal(4, 100); // returns 50
 //calculateTotal(5, 100); // returns 0
@@ -216,40 +208,40 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  */
 
 
-
+//could create individual functions and then callback
 //askNumber outputs true/false
-function userConfirm(){
-    let userChoice = confirm('Would you like to enter a number?');
-    if (userChoice) {
-        userParticipates(prompt(('Please enter a number')));
-    } else {
-        alert('No worries. Have a great day!');
-    }
-}
-
-function userParticipates(num) {
-    //alerts user that input is not a number and prompts user again to enter a number
-    if (isNaN(num)) {
-        alert('Please enter a number type, not a ' + typeof num);
-        num = prompt('Please enter a number');
-    }
-    //parses input into a floating point number and alerts
-    num = parseFloat(num);
-    //determines if input is odd or even
-    if (num % 2 === 0) {
-        alert('The number ' + num + ' is even');
-    } else {
-        alert('The number ' + num + ' is odd');
-    }
-    //determines if input is positive or negative and alerts
-    if (num < 0) {
-        alert(num + ' is negative');
-    } else {
-        alert(num + ' is positive');
-    }
-    //adds 100 to user input and alerts
-    alert(num + ' plus 100 is ' + (num + 100));
-}
-
-userConfirm();
-
+//function userConfirm(){
+//    let userChoice = confirm('Would you like to enter a number?');
+//    if (userChoice) {
+//        userParticipates(prompt(('Please enter a number')));
+//    } else {
+//        alert('No worries. Have a great day!');
+//    }
+//}
+//
+//function userParticipates(num) {
+//    //alerts user that input is not a number and prompts user again to enter a number
+//    if (isNaN(num)) {
+//        alert('Please enter a number type, not a ' + typeof num);
+//        num = prompt('Please enter a number');
+//    }
+//    //parses input into a floating point number and alerts
+//    num = parseFloat(num);
+//    //determines if input is odd or even
+//    if (num % 2 === 0) {
+//        alert('The number ' + num + ' is even');
+//    } else {
+//        alert('The number ' + num + ' is odd');
+//    }
+//    //determines if input is positive or negative and alerts
+//    if (num < 0) {
+//        alert(num + ' is negative');
+//    } else {
+//        alert(num + ' is positive');
+//    }
+//    //adds 100 to user input and alerts
+//    alert(num + ' plus 100 is ' + (num + 100));
+//}
+//
+//userConfirm();
+//
