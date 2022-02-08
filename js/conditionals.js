@@ -146,7 +146,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // Generate a random number between 0 and 6
 //var luckyNumber = Math.floor(Math.random() * 6);
 
-//Works, but still provides an 'undefined' result if you input a luckyNumber outside 1-5
+//Works mostly, but still provides an 'undefined' result if you input a luckyNumber outside 1-5
 
 function calculateTotal(luckyNumber, totalAmount) {
     luckyNumber = parseInt(userLuckyNum);
@@ -208,8 +208,8 @@ alert('Your total bill is $' + calculateTotal(userLuckyNum, userTotalBill)) // a
  */
 
 
-//could create individual functions and then callback
-//askNumber outputs true/false
+
+//userConfirm outputs true/false
 //function userConfirm(){
 //    let userChoice = confirm('Would you like to enter a number?');
 //    if (userChoice) {
