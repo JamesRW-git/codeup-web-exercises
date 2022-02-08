@@ -27,35 +27,6 @@
  * You should see a different message every time you refresh the page
  * COMPLETE
  */
-
-
-/*function analyzeColor(color) {
-    color = color.toLowerCase();
-    if (color === 'blue') {
-        console.log(color + ' is a color I was prepared for.');
-    } else if (color === 'green') {
-        console.log(color + ' is a color I was prepared for.');
-    } else if (color === 'yellow') {
-        console.log(color + ' is a color I was prepared for.');
-    } else if (color === 'purple') {
-        console.log(color + ' is a color I was prepared for.');
-    } else if (color === 'black') {
-        console.log(color + ' is a color I was prepared for.');
-    } else if (color === 'white') {
-        console.log(color + ' is a color I was prepared for.');
-    } else if (color === 'red') {
-        console.log(color + ' is a color I was prepared for.');
-    } else {
-        console.log('I was not prepared for the input of ' + color);
-    }
-}
-
-analyzeColor('blue');
-analyzeColor('violet');
-analyzeColor('GREEN');
-analyzeColor(randomColor);*/
-
-
 // Don't change the next two lines!
 // These lines create two variables for you:
 // - `colors`: a list of the colors of the rainbow
@@ -64,55 +35,91 @@ analyzeColor(randomColor);*/
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
 
+
+//function analyzeColor(color) {
+//    color = color.toLowerCase();
+//    if (color === 'blue') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else if (color === 'green') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else if (color === 'yellow') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else if (color === 'purple') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else if (color === 'black') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else if (color === 'white') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else if (color === 'red') {
+//        console.log(color + ' is a color I was prepared for.');
+//    } else {
+//        console.log('I was not prepared for the input of ' + color);
+//    }
+//}
+//
+//analyzeColor('blue');
+//analyzeColor('violet');
+//analyzeColor('GREEN');
+//analyzeColor(randomColor);
+
+
+
+
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  * COMPLETE
  */
-
-function analyzeColor(color){
-    color = color.toLowerCase();
-    switch(color) {
-        case 'blue':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        case 'green':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        case 'yellow':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        case 'purple':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        case 'black':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        case 'white':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        case 'red':
-            console.log(color + ' is a color I was prepared for.');
-            break;
-        default:
-            console.log('I was not prepared for the input of ' + color);
-            break;
-    }
-}
-
-analyzeColor(randomColor);
-
-/**
- * TODO:
- * Comment out the code above, and refactor your function to use a switch-case statement
- */
-
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
+ * COMPLETE
  */
+//console logs and alerts are unnecessary...could just alert the output at the end. Will fix
+//function analyzeColor(color) {
+//    color = color.toLowerCase();
+//    switch (color) {
+//        case 'blue':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        case 'green':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        case 'yellow':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        case 'purple':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        case 'black':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        case 'white':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        case 'red':
+//            alert(color + ' is a color I was prepared for.');
+//            console.log(color + ' is a color I was prepared for.');
+//            break;
+//        default:
+//            alert('I was not prepared for the input of ' + color);
+//            console.log('I was not prepared for the input of ' + color);
+//            break;
+//    }
+//}
+//
+//var userColor = prompt('Please enter a color');
+//analyzeColor(userColor);
+
+
 
 /* ########################################################################## */
 
@@ -134,8 +141,8 @@ analyzeColor(randomColor);
  *
  * Test your function by passing it various values and checking for the expected
  * return value.
+ * COMPLETE
  */
-
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -145,7 +152,49 @@ analyzeColor(randomColor);
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+//var luckyNumber = Math.floor(Math.random() * 6);
+
+//same as previous
+
+//let userLuckyNum = parseInt(prompt('What was your lucky number, lucky guy/lady'));
+//let userTotalBill = parseFloat(prompt('What was your total bill?'));
+//
+//function calculateTotal(luckyNumber, totalAmount) {
+//    luckyNumber = parseInt(userLuckyNum);
+//    totalAmount = parseFloat(userTotalBill);
+//    switch(luckyNumber) {
+//        case luckyNumber = 0:
+//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + totalAmount);
+//            break;
+//        case luckyNumber = 1:
+//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .9));
+//            break;
+//        case luckyNumber = 2:
+//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .75));
+//            break;
+//        case luckyNumber = 3:
+//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .65));
+//            break;
+//        case luckyNumber = 4:
+//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * .5));
+//            break;
+//        case luckyNumber = 5:
+//            alert('Your lucky number was ' + luckyNumber + '. Price before discount was ' + totalAmount + '. Your total is: $' + (totalAmount * 0));
+//            break;
+//        default:
+//            alert('Please go back and input a Lucky Number between 1 and 5');
+//            break;
+//    }
+//}
+//
+//calculateTotal(userLuckyNum, userTotalBill) // alerts user to total before and after discount
+//calculateTotal(0, 100); // returns 100
+//calculateTotal(4, 100); // returns 50
+//calculateTotal(5, 100); // returns 0
+//calculateTotal(luckyNumber, 100); // returns 100 - corresponding luckyNumber discount
+
+
+
 
 /**
  * TODO:
@@ -165,3 +214,42 @@ analyzeColor(randomColor);
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+
+
+//askNumber outputs true/false
+function userConfirm(){
+    let userChoice = confirm('Would you like to enter a number?');
+    if (userChoice) {
+        userParticipates(prompt(('Please enter a number')));
+    } else {
+        alert('No worries. Have a great day!');
+    }
+}
+
+function userParticipates(num) {
+    //alerts user that input is not a number and prompts user again to enter a number
+    if (isNaN(num)) {
+        alert('Please enter a number type, not a ' + typeof num);
+        num = prompt('Please enter a number');
+    }
+    //parses input into a floating point number and alerts
+    num = parseFloat(num);
+    //determines if input is odd or even
+    if (num % 2 === 0) {
+        alert('The number ' + num + ' is even');
+    } else {
+        alert('The number ' + num + ' is odd');
+    }
+    //determines if input is positive or negative and alerts
+    if (num < 0) {
+        alert(num + ' is negative');
+    } else {
+        alert(num + ' is positive');
+    }
+    //adds 100 to user input and alerts
+    alert(num + ' plus 100 is ' + (num + 100));
+}
+
+userConfirm();
+
