@@ -1,6 +1,7 @@
 "use strict";
 
 //While Loop Exercise
+
 //let numInput = 2;
 //while (numInput <= 65536) {
 //    if(numInput % 2 === 0) {
@@ -10,6 +11,7 @@
 //}
 
 //Do While Loop Exercise
+
 //use inside code: Math.floor(Math.random() * 5) + 1
 var allCones = Math.floor(Math.random() * 50) + 50;
 var randomNumber = Math.floor(Math.random() * 5) + 1;
