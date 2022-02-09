@@ -39,12 +39,33 @@
 //
 //alert('This is your name: ' + names);
 
-let numberOfNames = prompt("How many names do you use?");
-let names = "";
-do {
-    names += prompt('Please enter name ' + ' ');
-    names += ' ';
-    numberOfNames--;
-} while (numberOfNames > 0);
+//full name example using prompt for number of names
+//let numberOfNames = prompt("How many names do you use?");
+//let names = "";
+//do {
+//    names += prompt('Please enter name ' + ' ');
+//    names += ' ';
+//    numberOfNames--;
+//} while (numberOfNames > 0);
+//
+//alert('This is your name: ' + names);
 
-alert('This is your name: ' + names);
+//do while mini exercise
+// // TODO: A parking lot with 30 parking spaces wants to display the amount of spaces available as it gets filled.
+//  Let's assume that there are allowing two cars into the parking lot at a time. As those cars take up spaces,
+//  write a do-while loop that prints the spaces available. If the parking lot gets filled, print "this parking lot
+//  is now full" to the console.
+
+let spacesAvail = 30;
+console.log('There are currently ' + spacesAvail + ' parking spots left');
+do {
+    spacesAvail--;
+    if (spacesAvail % 2 === 0 && spacesAvail >= 2) {
+        console.log('There are currently ' + spacesAvail + ' parking spots left');
+    }
+} while (spacesAvail > 0);
+console.log('This parking lot is now full!');
+
+// // TODO: using prompt() and alert(), write a while loop that will continue to ask for the correct password until the
+// //  correct password is given.
+
