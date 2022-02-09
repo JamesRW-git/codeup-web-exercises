@@ -79,5 +79,15 @@
 // // TODO: using prompt() and alert(), write a while loop that will continue to ask for the correct password until the
 // //  correct password is given.
 
-//let password = 'PasswordR4Losers';
-//while (passwordInput =! password)
+//password exercise
+let password = 'PasswordsR4Losers';
+let isCorrect = false;
+let attempt = "";
+while (!isCorrect) {
+    attempt = prompt('Please enter your password');
+    isCorrect = (attempt === password);
+    if (!isCorrect) {
+        alert('That was incorrect');
+    }
+}
+alert('You have entered the correct password!');
