@@ -24,42 +24,39 @@
 //}
 
 //Exercise For Loops 4
+//Frustratingly satisfying
 function numberTree(height) {
     for (let i = 1; i <= height ; i++) {
         let tree = i;
         let space ='' + i;
-
-        for (var j = 1; j <= i; j++) {
-            tree = i.toString();
-        }
-
-        let gap = space.repeat(height + 1 - i);
-            tree = tree + gap;
+        let gap = space.repeat(height + i - height - 1);
+            tree = gap + tree;
         console.log(tree);
     }
 }
 
 numberTree(9);
 
-
-
-
-//    function drawTree(height) {
+//Example that I built off of to eventually figure out exercise 4
+//function drawTree(height) {
 //    for ( let i = 0; i < height ; i++ ) {
 //        let star = '*';
-//        let space = '\n';
+//        let space = ' ';
 //
 //        for ( let j = 1; j <= i; j++ ) {
 //            star = star + '**';
 //        }
 //
-//        let gap = space.repeat(height-i+1);
+//        let gap = space.repeat(height-i-1);
 //        star = gap + star;
 //        console.log(star);
 //    }
 //}
 //
-//drawTree(10);
+//let number = prompt('Give number for tree height');
+//
+//drawTree(number);
+
 
 
 
