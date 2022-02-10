@@ -122,11 +122,11 @@ zeroToNum(30);
 function marcoPoloOrNum(maxnum) {
     for(let i = 1; i <= maxnum; i++) {
         if (i % 3 === 0 && i % 5 === 0) {
-            console.log('Marco Polo');
+            console.log(i + ' Marco Polo');
         } else if(i % 3 === 0){
-                console.log('Marco');
+                console.log(i + ' Marco');
             } else if (i % 5 === 0) {
-                console.log('Polo');
+                console.log(i + ' Polo');
             } else {
                 console.log(i + ' I\'m not playing.');
             }
