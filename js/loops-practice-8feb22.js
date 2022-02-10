@@ -80,7 +80,7 @@
 // //  correct password is given.
 
 //password exercise
-let password = 'PasswordsR4Losers';
+/*let password = 'PasswordsR4Losers';
 let isCorrect = false;
 let attempt = "";
 while (!isCorrect) {
@@ -90,4 +90,48 @@ while (!isCorrect) {
         alert('That was incorrect');
     }
 }
-alert('You have entered the correct password!');
+alert('You have entered the correct password!');*/
+
+/*
+let letters = '';
+
+for(let i = letters.length; i < 36; i++){ //stop the loop when character count is 36
+    console.log(letters.length);
+    letters += 'z';
+    console.log(letters);
+}
+
+console.log(letters.length);*/
+
+
+// TODO: Use a for loop to print the even numbers between 0 and 30, inclusive.
+//  HINT: remember the remainder operator (modulo) COMPLETE
+
+function zeroToNum(num){
+    for(let i = 0; i <= num; i += 2) {
+            console.log(i)
+    }
+}
+
+zeroToNum(30);
+
+// TODO: loop through numbers 1 - 40. Print "marco" if it's divisible by 3. Print "polo" if it's divisible by 5.
+//  -> If it's neither print "I'm not playing"
+//  -> Print "marco polo" if it's divisible by 3 and 5.
+
+function marcoPoloOrNum(maxnum) {
+    for(let i = 1; i <= maxnum; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            console.log('Marco Polo');
+        } else if(i % 3 === 0){
+                console.log('Marco');
+            } else if (i % 5 === 0) {
+                console.log('Polo');
+            } else {
+                console.log(i + ' I\'m done playing.');
+            }
+        }
+    }
+
+
+marcoPoloOrNum(40);
