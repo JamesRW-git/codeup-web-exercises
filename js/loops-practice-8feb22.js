@@ -128,7 +128,7 @@ function marcoPoloOrNum(maxnum) {
             } else if (i % 5 === 0) {
                 console.log('Polo');
             } else {
-                console.log(i + ' I\'m done playing.');
+                console.log(i + ' I\'m not playing.');
             }
         }
     }
