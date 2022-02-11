@@ -62,22 +62,22 @@
      */
 
     //log first item in array
-    function logFirst(arrayIn) {
-        return names[0];
+    function first(arrayIn) {
+        return arrayIn[0];
     }
 
     //return second element in array
-    function logSecond (arrayIn) {
-        return names[1];
+    function second (arrayIn) {
+        return arrayIn[1];
     }
 
     //return last element in array
-    function logLast(arrayIn) {
-        return names[names.length - 1];
+    function last(arrayIn) {
+        return arrayIn[arrayIn.length - 1];
     }
 
-    console.log(logFirst(names));
-    console.log(logSecond(names));
-    console.log(logLast(names));
+    console.log(first(names));
+    console.log(second(names));
+    console.log(last(names));
 
 })();
