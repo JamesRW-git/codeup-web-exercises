@@ -44,7 +44,7 @@
      */
 
     names.forEach(function(name, index) {
-            console.log('Dog at index ' + index + ' is ' + name);
+            console.log('Name at index ' + index + ' is ' + name);
     });
 
     /**
@@ -60,13 +60,24 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-    logItem(0);
-    logItem(1);
-    logItem(3);
 
-    function logItem(item) {
-        console.log(names[item])
+    //log first item in array
+    function logFirst(arrayIn) {
+        console.log('The first element is ' + names[0]);
     }
 
+    //return second element in array
+    function logSecond (arrayIn) {
+        console.log('The second element is ' + names[1]);
+    }
+
+    //return last element in array
+    function logLast(arrayIn) {
+        console.log('The last element is ' + names[names.length - 1]);
+    }
+
+    logFirst(names);
+    logSecond(names);
+    logLast(names);
 
 })();
