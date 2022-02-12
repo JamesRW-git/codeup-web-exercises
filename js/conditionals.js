@@ -146,44 +146,41 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 // Generate a random number between 0 and 6
 //var luckyNumber = Math.floor(Math.random() * 6);
 
-//Works mostly, but still provides an 'undefined' result if you input a luckyNumber outside 1-5
-
+//Works but is impractical since I don't have it looping to keep asking for the lucky number if it falls outside bounds
+//Will look back at this later and cringe, probably, but it works
 function calculateTotal(luckyNumber, totalAmount) {
-    luckyNumber = parseInt(userLuckyNum);
-    totalAmount = parseFloat(userTotalBill);
-    switch(luckyNumber) {
-        case luckyNumber = 0:
-            return totalAmount;
-            break;
-        case luckyNumber = 1:
-            return totalAmount * .9;
-            break;
-        case luckyNumber = 2:
-            return totalAmount * .75;
-            break;
-        case luckyNumber = 3:
-            return totalAmount * .65;
-            break;
-        case luckyNumber = 4:
-            return totalAmount * .5;
-            break;
-        case luckyNumber = 5:
-            return 0;
-            break;
-        default:
-            alert('Please go back and input a Lucky Number between 1 and 5');
-            break;
+    luckyNumber = parseInt(prompt('What was your lucky number, lucky guy/lady'));
+    if (luckyNumber >=1 && luckyNumber <= 5) {
+        totalAmount = parseFloat(prompt('What was your total bill?'));
+        switch (luckyNumber) {
+            case luckyNumber = 0:
+                return alert('Your Lucky Number was ' + luckyNumber + '. Your total was: $' + totalAmount + ' After discount: $' + totalamount);
+                break;
+            case luckyNumber = 1:
+                return alert('Your Lucky Number was ' + luckyNumber + '. Your total was: $' + totalAmount + ' After discount: $' + totalAmount * .9);
+                break;
+            case luckyNumber = 2:
+                return alert('Your Lucky Number was ' + luckyNumber + '. Your total was: $' + totalAmount + ' After discount: $' + totalAmount * .75);
+                break;
+            case luckyNumber = 3:
+                return alert('Your Lucky Number was ' + luckyNumber + '. Your total was: $' + totalAmount + ' After discount: $' + totalAmount * .65);
+                break;
+            case luckyNumber = 4:
+                return alert('Your Lucky Number was ' + luckyNumber + '. Your total was: $' + totalAmount + ' After discount: $' + totalAmount * .5);
+                break;
+            case luckyNumber = 5:
+                return alert('Your Lucky Number was ' + luckyNumber + '. Your total was: $' + totalAmount + ' After discount: $' + 0);
+                break;
+            default:
+                alert('Please go back and input a Lucky Number between 1 and 5');
+                break;
+        }
+    } else{
+        alert('Please go back and input a Lucky Number Between 1 and 5');
     }
 }
 
-let userLuckyNum = parseInt(prompt('What was your lucky number, lucky guy/lady'));
-let userTotalBill = parseFloat(prompt('What was your total bill?'));
-
-alert('Your total bill is $' + calculateTotal(userLuckyNum, userTotalBill)) // alerts user to total before and after discount
-//calculateTotal(0, 100); // returns 100
-//calculateTotal(4, 100); // returns 50
-//calculateTotal(5, 100); // returns 0
-//calculateTotal(luckyNumber, 100); // returns 100 - corresponding luckyNumber discount
+calculateTotal();
 
 
 
@@ -210,38 +207,38 @@ alert('Your total bill is $' + calculateTotal(userLuckyNum, userTotalBill)) // a
 
 
 //userConfirm outputs true/false
-//function userConfirm(){
-//    let userChoice = confirm('Would you like to enter a number?');
-//    if (userChoice) {
-//        userParticipates(prompt(('Please enter a number')));
-//    } else {
-//        alert('No worries. Have a great day!');
-//    }
-//}
-//
-//function userParticipates(num) {
-//    //alerts user that input is not a number and prompts user again to enter a number
-//    if (isNaN(num)) {
-//        alert('Please enter a number type, not a ' + typeof num);
-//        num = prompt('Please enter a number');
-//    }
-//    //parses input into a floating point number and alerts
-//    num = parseFloat(num);
-//    //determines if input is odd or even
-//    if (num % 2 === 0) {
-//        alert('The number ' + num + ' is even');
-//    } else {
-//        alert('The number ' + num + ' is odd');
-//    }
-//    //determines if input is positive or negative and alerts
-//    if (num < 0) {
-//        alert(num + ' is negative');
-//    } else {
-//        alert(num + ' is positive');
-//    }
-//    //adds 100 to user input and alerts
-//    alert(num + ' plus 100 is ' + (num + 100));
-//}
-//
-//userConfirm();
-//
+function userConfirm(){
+    let userChoice = confirm('Would you like to enter a number?');
+    if (userChoice) {
+        userParticipates(prompt(('Please enter a number')));
+    } else {
+        alert('No worries. Have a great day!');
+    }
+}
+
+function userParticipates(num) {
+    //alerts user that input is not a number and prompts user again to enter a number
+    if (isNaN(num)) {
+        alert('Please enter a number type, not a ' + typeof num);
+        num = prompt('Please enter a number');
+    }
+    //parses input into a floating point number and alerts
+    num = parseFloat(num);
+    //determines if input is odd or even
+    if (num % 2 === 0) {
+        alert('The number ' + num + ' is even');
+    } else {
+        alert('The number ' + num + ' is odd');
+    }
+    //determines if input is positive or negative and alerts
+    if (num < 0) {
+        alert(num + ' is negative');
+    } else {
+        alert(num + ' is positive');
+    }
+    //adds 100 to user input and alerts
+    alert(num + ' plus 100 is ' + (num + 100));
+}
+
+userConfirm();
+
