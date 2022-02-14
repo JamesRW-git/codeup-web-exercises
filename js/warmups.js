@@ -5,8 +5,7 @@
 //across an array
 
 function findAverage(array){
-    var total = 0;
-
+    let total = 0;
     array.forEach(function(item,index) {
         total += item;
     });
