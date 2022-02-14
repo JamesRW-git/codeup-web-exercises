@@ -90,28 +90,28 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    // let arrayOfBooks = [
-    //     {title: 'Redwall', author:{fname: 'Brian', lname: 'Jacques'}},
-    //     {title: 'Hell\'s Angels', author:{fname: 'Hunter', lname: 'Thompson'}},
-    //     {title: '1984', author:{fname: 'George', lname: 'Orwell'}},
-    //     {title: 'Fahrenheit 451', author:{fname: 'Ray', lname: 'Bradbury'}},
-    //     {title: 'Foundation', author:{fname: 'Isaac', lname: 'Asimov'}}
-    // ]
-    // console.log(arrayOfBooks);
-    //
-    // console.log(arrayOfBooks[0].title);
-    // console.log(arrayOfBooks[0].author.fname);
-    // console.log(arrayOfBooks[0].author.lname);
-    //
-    // function bookoutput() {
-    //     arrayOfBooks.forEach(function (i, index) {
-    //         console.log(i);
-    //         console.log('Book #' + (index + 1));
-    //         console.log('Title: ' + i.title);
-    //         console.log('Author: ' + i.author.fname + ' ' + i.author.lname);
-    //     })
-    // }
-    // bookoutput();
+    let arrayOfBooks = [
+        {title: 'Redwall', author:{fname: 'Brian', lname: 'Jacques'}},
+        {title: 'Hell\'s Angels', author:{fname: 'Hunter', lname: 'Thompson'}},
+        {title: '1984', author:{fname: 'George', lname: 'Orwell'}},
+        {title: 'Fahrenheit 451', author:{fname: 'Ray', lname: 'Bradbury'}},
+        {title: 'Foundation', author:{fname: 'Isaac', lname: 'Asimov'}}
+    ]
+    console.log(arrayOfBooks);
+
+    console.log(arrayOfBooks[0].title);
+    console.log(arrayOfBooks[0].author.fname);
+    console.log(arrayOfBooks[0].author.lname);
+
+    function bookoutput() {
+        arrayOfBooks.forEach(function (i, index) {
+            console.log(i);
+            console.log('Book #' + (index + 1));
+            console.log('Title: ' + i.title);
+            console.log('Author: ' + i.author.fname + ' ' + i.author.lname);
+        })
+    }
+    bookoutput();
 
 
     /**
@@ -149,5 +149,21 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+function createBook(title, first, last) {
+    arrayOfBooks.push({
+        title: title,
+        author:{
+        fname: first,
+        lname: last
+    }})
+    };
+
+    createBook('Maus', 'Art', 'Spiegelman');
+    console.log(arrayOfBooks);
+    bookoutput();
+
+
+
 
 })();
