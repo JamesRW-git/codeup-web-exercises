@@ -28,4 +28,17 @@
      * string, and <li> tags around each planet.
      */
 
+    function buildPlanetUl(arrayOfPlanets) {
+        let newString = '<ul>';
+        for (let i = 0; i < arrayOfPlanets.length; i++) {
+            newString += '<li>'
+            newString += arrayOfPlanets[i];
+            newString += '</li>'
+        }
+        newString += '</ul>'
+        return newString;
+    }
+
+    console.log(buildPlanetUl(planetsArray));
+
 })();
