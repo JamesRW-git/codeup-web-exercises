@@ -103,7 +103,7 @@
     console.log(arrayOfBooks[0].author.fname);
     console.log(arrayOfBooks[0].author.lname);
 
-    function bookoutput() {
+    function showBookInfo() {
         arrayOfBooks.forEach(function (i, index) {
             console.log(i);
             console.log('Book #' + (index + 1));
@@ -111,7 +111,7 @@
             console.log('Author: ' + i.author.fname + ' ' + i.author.lname);
         })
     }
-    bookoutput();
+
 
 
     /**
@@ -157,13 +157,10 @@ function createBook(title, first, last) {
         fname: first,
         lname: last
     }})
-    };
+}
 
     createBook('Maus', 'Art', 'Spiegelman');
     console.log(arrayOfBooks);
-    bookoutput();
-
-
-
+    showBookInfo();
 
 })();
