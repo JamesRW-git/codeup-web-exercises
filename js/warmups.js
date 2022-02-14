@@ -3,6 +3,7 @@
 
 //Create a function called findAverage that finds the average of integers
 //across an array
+//14 February 2022
 
 function findAverage(array){
     let total = 0;
