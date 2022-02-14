@@ -14,3 +14,4 @@ function findAverage(array){
 }
 
 console.log(findAverage([50, 75, 89, 109, 68]));
+
