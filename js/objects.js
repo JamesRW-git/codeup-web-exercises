@@ -12,14 +12,14 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-    // let person = {
-    //     firstName: 'James',
-    //     lastName: 'Woodward'
-    // }
-    //
-    // console.log(person);
-    // console.log(person.firstName);
-    // console.log(person.lastName);
+    let person = {
+        firstName: 'James',
+        lastName: 'Woodward'
+    };
+
+    console.log(person);
+    console.log(person.firstName);
+    console.log(person.lastName);
 
     /**
      * TODO:
@@ -31,11 +31,11 @@
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
 
-    // function sayHello() {
+    // person.sayHello = function() {
     //     return console.log('Hello from ' + person.firstName + ' ' + person.lastName + '!');
     // }
     //
-    // sayHello();
+    // person.sayHello();
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -51,20 +51,21 @@
      * and console.log the relevant messages for each person
      */
 
-    // let shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-    //
-    // let calculateShopperDiscount = function() {
-    //     let discount = .88
+    let shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    // shoppers.calculateShopperDiscount = function() {
+    //     let discount = .88 //100% - 12% = 88%
     //     let discountedPrice;
     //     shoppers.forEach(function(person) {
     //         if (person.amount > 200) {
     //             discountedPrice = person.amount * discount;
     //             console.log('Hey ' + person.name + '!')
     //             console.log('Your pre-discount total was: $' + person.amount);
+    //             console.log('Your discount is: $' + (person.amount - discountedPrice).toFixed(2));
     //             console.log('Your total after discount is: $' + discountedPrice);
     //         } else {
     //             console.log('Hey ' + person.name + '!');
@@ -73,7 +74,7 @@
     //     })
     // }
     //
-    // calculateShopperDiscount();
+    // shoppers.calculateShopperDiscount();
 
 
 
@@ -103,11 +104,13 @@
     console.log(arrayOfBooks[0].author.fname);
     console.log(arrayOfBooks[0].author.lname);
 
-    function showBookInfo() {
-        arrayOfBooks.forEach(function (i, index) {
+    arrayOfBooks.showBooksInfo = function() {
+        console.log('---');
+        arrayOfBooks.forEach(function (book, index) {
             console.log('Book # ' + (index + 1));
-            console.log('Title: ' + i.title);
-            console.log('Author: ' + i.author.fname + ' ' + i.author.lname);
+            console.log('Title: ' + book.title);
+            console.log('Author: ' + book.author.fname + ' ' + book.author.lname);
+            console.log('---');
         })
     }
 
@@ -149,17 +152,18 @@
      *   `showBookInfo` function.
      */
 
-function createBook(title, first, last) {
-    arrayOfBooks.push({
-        title: title,
-        author:{
-        fname: first,
-        lname: last
-    }})
-}
+        //works, but ideally needs another, separate function to add the book since it's doing two things
+    let createBook = function(title, first, last) {
+        arrayOfBooks.push({
+            title: title,
+            author:{
+            fname: first,
+            lname: last
+        }})
+    }
 
-    createBook('Maus', 'Art', 'Spiegelman');
-    console.log(arrayOfBooks);
-    showBookInfo();
+        createBook('Maus', 'Art', 'Spiegelman');
+        console.log(arrayOfBooks);
+        arrayOfBooks.showBooksInfo();
 
 })();
