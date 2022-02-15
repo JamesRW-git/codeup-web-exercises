@@ -51,29 +51,29 @@
      * and console.log the relevant messages for each person
      */
 
-    let shoppers = [
-        {name: 'Cameron', amount: 180},
-        {name: 'Ryan', amount: 250},
-        {name: 'George', amount: 320}
-    ];
-
-    let calculateShopperDiscount = function() {
-        let discount = .88
-        let discountedPrice;
-        shoppers.forEach(function(person) {
-            if (person.amount > 200) {
-                discountedPrice = person.amount * discount;
-                console.log('Hey ' + person.name + '!')
-                console.log('Your pre-discount total was: $' + person.amount);
-                console.log('Your total after discount is: $' + discountedPrice);
-            } else {
-                console.log('Hey ' + person.name + '!');
-                console.log('Your total is: $' + person.amount)
-            }
-        })
-    }
-
-    calculateShopperDiscount();
+    // let shoppers = [
+    //     {name: 'Cameron', amount: 180},
+    //     {name: 'Ryan', amount: 250},
+    //     {name: 'George', amount: 320}
+    // ];
+    //
+    // let calculateShopperDiscount = function() {
+    //     let discount = .88
+    //     let discountedPrice;
+    //     shoppers.forEach(function(person) {
+    //         if (person.amount > 200) {
+    //             discountedPrice = person.amount * discount;
+    //             console.log('Hey ' + person.name + '!')
+    //             console.log('Your pre-discount total was: $' + person.amount);
+    //             console.log('Your total after discount is: $' + discountedPrice);
+    //         } else {
+    //             console.log('Hey ' + person.name + '!');
+    //             console.log('Your total is: $' + person.amount)
+    //         }
+    //     })
+    // }
+    //
+    // calculateShopperDiscount();
 
 
 
@@ -105,8 +105,7 @@
 
     function showBookInfo() {
         arrayOfBooks.forEach(function (i, index) {
-            console.log(i);
-            console.log('Book #' + (index + 1));
+            console.log('Book # ' + (index + 1));
             console.log('Title: ' + i.title);
             console.log('Author: ' + i.author.fname + ' ' + i.author.lname);
         })
