@@ -15,8 +15,8 @@
         },
 
         logInfo: function (doRounding) {
-            if (doRounding === true) {
-                console.log(Math.round(this.getArea()));;
+            if (doRounding) {
+                console.log(Math.round(this.getArea()));
             }
             // TODO: complete this method.
 
