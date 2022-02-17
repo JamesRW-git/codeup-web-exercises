@@ -26,18 +26,18 @@
 //}
 
 //full name example
-//let fullNameEntered = false;
-//let names = "";
-////We don't know how many names they have
-//do {
-//    names += prompt('Please enter your name' + " ");
-//    fullNameEntered = confirm('Is this your full name?');
-//    if (!fullNameEntered){
-//        names += " ";
-//    }
-//} while (!fullNameEntered)
-//
-//alert('This is your name: ' + names);
+let fullNameEntered = false;
+let names = "";
+//We don't know how many names they have
+do {
+   names += prompt('Please enter your name' + " ");
+   fullNameEntered = confirm('Is this your full name?');
+   if (!fullNameEntered){
+       names += " ";
+   }
+} while (!fullNameEntered)
+
+alert('This is your name: ' + names);
 
 //full name example using prompt for number of names
 //let numberOfNames = prompt("How many names do you use?");
