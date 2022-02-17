@@ -5,13 +5,13 @@
     <title>Register With Us</title>
     <style>
         body {
-            background-image:url('https://images.pexels.com/photos/566378/pexels-photo-566378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
+            background-image: url('https://images.pexels.com/photos/566378/pexels-photo-566378.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')
         }
     </style>
 </head>
 <body>
 <nav>
-<img src="https://www.logolynx.com/images/logolynx/74/749a97dc8d2c0618ef12ec6276ff70ac.png">
+    <img src="https://www.logolynx.com/images/logolynx/74/749a97dc8d2c0618ef12ec6276ff70ac.png">
     <p><em>Sort of a Person Since 2014&copy;</em></p>
 </nav>
 <form method="POST" action="https://request-inspector.glitch.me/">
@@ -29,20 +29,45 @@
         <hr>
         <h2>User Bio</h2>
         <p>We already know everything about you, but please share what you think we don't know yet below</p>
-        <textarea name="bio"></textarea>
+        <textarea name="bio" cols="30" rows="10"
+                  placeholder="Blood type, SSN, password reset information, etc..."></textarea>
     </div>
 
     <div>
         <hr>
         <h3>How did you hear about us?</h3>
-        We own you<input type="radio" name="heard_about_us" value="billboard"><br>
-        Dystopian Times<input type="radio" name="heard_about_us" value="radio advertisement"><br>
-        A talking dog (thanks Bear, good boy)<input type="radio" name="heard_about_us"
-                                                    value="internet advertisement"><br>
-        Business card on the ground<input type="radio" name="heard_about_us" value="other"><br>
-        Veridian Brainwave Commercial&trade;<input type="radio" name="heard_about_us" value="advanced technology"><br>
-    <br>
+        <label for="billboard">
+            We own you
+            <input type="radio" id="billboard" name="heard_about_us" value="billboard"><br>
+        </label>
+        <label for="radio-advert">
+            Dystopian Times
+            <input type="radio" id="radio-advert" name="heard_about_us" value="radio advertisement"><br>
+        </label>
+        <label for="internet-advert">
+            A talking dog (thanks Bear, good boy)
+            <input type="radio" id="internet-advert" name="heard_about_us"
+                   value="internet advertisement"><br>
+        </label>
+        <label for="other">
+            Business card on the ground
+            <input type="radio" id="other" name="heard_about_us" value="other"><br>
+        </label>
+        <label for="advanced_tech">
+            Veridian Brainwave Commercial&trade;
+            <input type="radio" id="advanced_tech" name="heard_about_us" value="advanced technology"><br>
+        </label>
+        <br>
     </div>
+
+    <select name="browser" id="browser" placeholder="Select your browser">
+        <option value="---">Select Your Browser</option>
+        <option value="VeridiBrowse">VeridiBrowse</option>
+        <option value="Chrome">Google Chrome</option>
+        <option value="Firefox">Mozilla Firefox</option>
+        <option value="Edge">Microsoft Edge</option>
+        <option value="DuckDuckGo">DuckDuckGo</option>
+    </select>
 
     <button type="submit">Submit</button>
 </form>
