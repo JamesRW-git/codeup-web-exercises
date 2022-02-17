@@ -17,108 +17,55 @@
 // console.log(findAverage([50, 75, 89, 109, 68]));
 
 //Warmup 16 February 2022
-//Create an object that represents a person. Include Name/DOB/Occupation
-//Log properties of that person
 
-// let person = {
-//     name: ['James', 'Robert', 'Woodward'],
-//     occupation: 'Fishmonger',
-//     birthDate: '04.25.1986'
-// }
-//
-// person.name.forEach((name) => {
-//     console.log(name);
-// })
+//Defines a contact info object
+function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailAddress) {
+    this.phoneNumber = phoneNumber;
+    this.streetAddress = streetAddress;
+    this.city = city;
+    this.state = state;
+    this.postalCode = postalCode;
+    this.emailAddress = emailAddress;
+}
 
-// let person2 = Object.create(person);
-// person2.name = ['Ry','Sutton'];
-// person2.occupation = 'Fab Father';
-// person2.birthDate = '01.01.1992'
-//
-//
-//
-// let person3 = Object.create(person);
-// person3.name = ['Method, Man'];
-// person3.occupation = 'Legend';
-// person3.birthDate = '03.02.1971';
+//Defines a person object
+function Person(occupation, dob, contactInfo) {
+    //assign a property the value of a function
+    //this helps get the names of a person, but is not executed until you invoke getNames
+    this.getNames = getNames;
+    //Then we actually INVOKE this.getNames() so the names are given when the person object is created
+    this.names = this.getNames();
+    this.occupation = occupation;
+    this.dob = dob;
+    this.contactInfo = contactInfo;
+}
 
-
-// let contactInfo = {
-//     phoneNumber: '555.555.5551',
-//     streetAddress: '9999 Last Street',
-//     city: 'New Orleans',
-//     state: 'Louisiana',
-//     postalCode: '70119',
-//     emailAddress: 'heyitsme@myemail.org'
-// }
-
- //person.contactInfo = contactInfo; // nests contactInfo into person object
-//OR WE CAN DEFINE A PERSON THIS WAY
-//  function Person(name, occupation, birthDate, contactInfo) {
-//      this.name = name;
-//      this.occupation = occupation;
-//      this.birthDate = birthDate;
-//      this.contactInfo = contactInfo;
-//  }
-//
-// //DEFINE CONTACT INFO THIS WAY
-// function ContactInfo(phoneNumber, streetAddress, city, state, postalCode, emailAddress) {
-//     this.phoneNumber = phoneNumber;
-//     this.streetAddress = streetAddress;
-//     this.city = city;
-//     this.state = state;
-//     this.postalCode = postalCode;
-//     this.emailAddress = emailAddress;
-// }
-
-
- //AFTER DEFINING YOU COULD THEN USE new Person and new ContactInfo object constructor
-
-// let person4 = new Person(
-//     ['Funky', 'Monkey'],
-//     'Cat herder',
-//     '12.31.1989',
-//     new ContactInfo(
-//         '111.111.111',
-//         '123 Sesame St.',
-//         'Anchorage',
-//         'Alaska',
-//         '00001',
-//         'bigbird@tallbird.nz'));
-//
-// console.log(person4);
-// console.log(person4.contactInfo.emailAddress);
-
-
-//Todo: print out the formatted address of the contact info
-// It should look like this-ish:
-//          123 Anywhere Ln
-//          Beverly Hills, CA 901210
-
-// function formattedAddress(contactInfo) {
-//     console.log(person.contactInfo.streetAddress);
-//     console.log(person.contactInfo.city + ', ' + person.contactInfo.state + ' ' + person.contactInfo.postalCode);
-// }
-//
-// formattedAddress(person.contactInfo);
-//
-// console.log(person);
-
-//Warmup 17 February 2022
-//Create a series of prompts/alerts/confirms to get username
-//Use a while loop. Add name to an array and return via an alert
-function getNames(){
+//Define HOW a user gives their name(s) and returns those names as a string array
+function getNames() {
     let namesArr = [];
     let hasMoreNames = true;
-    while(hasMoreNames){
-        // get those names
-        namesArr.push(prompt('Please enter your desired name'));
-        //prompt for names
-        //Will return a boolean, continuing or breaking the loop
-        hasMoreNames = confirm('Do you have another name to enter?');
+    while (hasMoreNames) {
+        //Get the names
+        namesArr.push(prompt('Please enter your name'));
+        //Then, if they want more names keep looping, if not break loop
+        hasMoreNames = confirm('Would you like to enter another name?');
     }
     return namesArr;
 }
 
+//Make new person object using the object functions we defined above
+let person2 = new Person(
+    'Fishmonger',
+    '04.25.1986',
+    new ContactInfo(
+        '123.456.7890',
+        '9999 Last St',
+        'LA',
+        '70119',
+        'brokenemail@reliablemail.com')
+    );
+
+//Log the object so we can see the values in the console
+console.log(person2);
 
 
