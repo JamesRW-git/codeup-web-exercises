@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulating Forms for Fortran</title>
+</head>
+<body>
+
+<!--- HTTP Methods
+GET -> use the data in the form to get me something back from the resource
+POST -> Sending new data to the resource, or alter data at the resource
+PUT -> Update some existing data
+DELETE -> Delete existing data
+--->
+
+<form method="POST" action="https://request-inspector.glitch.me/">
+
+    <div>
+        <label for="username-input">Username</label>
+        <input id="username-input" type="text" name="username" placeholder="Please enter your username">
+    </div>
+
+    <div>
+        <label for="email-input">Email</label>
+        <input id="email-input" type="email" name="email" placeholder="Please enter your email">
+    </div>
+
+    <div>
+        <label for="password-input">Password</label>
+        <input id="password-input" type="password" name="notpassword" placeholder="Please enter your password">
+    </div>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+</body>
+</html>
