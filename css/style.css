@@ -42,6 +42,7 @@ body {
     background-image: url("https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
     background-repeat: no-repeat;
     background-size: cover;
+    /*background-attachment: fixed;*/
     font-family: "Oswald", sans-serif;
 }
 
