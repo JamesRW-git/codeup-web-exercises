@@ -1,8 +1,58 @@
 .fancyheader {
-    color: #AF0CF0;
+    color: #663399;
+    text-decoration-line: underline;
+}
+
+h2 {
+    color: #2f4f4f;
+    text-decoration-line: underline;
 }
 
 .sampleimages {
     max-width: 30%;
 }
 
+.center {
+    margin:auto;
+    width: 50%;
+}
+
+body {
+    background-color: #808080;
+}
+
+body {
+    background-image: url("https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Oswald", sans-serif;
+}
+
+ul {
+    list-style-type: square;
+}
+
+ol {
+    list-style-type: upper-roman;
+}
+
+table, th, td {
+    border: 1px solid;
+    color: #108125;
+}
+
+a:link {
+    color: #b22222;
+}
+
+a:visited {
+    color:blue;
+}
+
+a:hover {
+    color: #556b2f;
+}
+
+a:active {
+    color: #9acd32;
+}
