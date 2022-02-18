@@ -1,3 +1,42 @@
+div {
+    ;
+}
+
+.message {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    border-color: #808080
+}
+
+.message-info {
+    color: #4481f0;
+    border-style: solid;
+    background-color: #6395ed;
+}
+
+.message-success {
+    border-style: solid;
+    background-color: #90ee00;
+    color: #7fd200;
+}
+
+.message-warning {
+    color: #b9c62e;
+    border-style: solid;
+    background-color: #ffff00;
+}
+
+.message-error{
+    color: #e15281;
+    border-style: solid;
+    background-color: #db7093;
+}
+
 body, html {
     height: 100%;
     width: 100%;
@@ -5,3 +44,4 @@ body, html {
     margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
+
