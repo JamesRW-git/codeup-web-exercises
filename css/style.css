@@ -17,6 +17,27 @@ h2 {
     width: 50%;
 }
 
+.cut-top-margin {
+    margin-top: 0px;
+}
+
+.cut-bottom-margin {
+    margin-bottom: 0px;
+}
+
+.margin-bottom-five {
+    margin-bottom: 5px;
+}
+
+.margin-remove-bottom-top {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.margin-top-five {
+    margin-top: 5px;
+}
+
 body {
     background-color: #808080;
 }
