@@ -13,8 +13,7 @@ h2 {
 }
 
 .center {
-    margin:auto;
-    width: 50%;
+    text-align:center;
 }
 
 .cut-top-margin {
@@ -43,6 +42,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     /*background-attachment: fixed;*/
+    background-color: blanchedalmond;
     font-family: "Oswald", sans-serif;
 }
 
