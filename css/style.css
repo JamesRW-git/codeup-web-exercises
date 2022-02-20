@@ -74,3 +74,16 @@ a:hover {
 a:active {
     color: #9acd32;
 }
+
+#animation {
+    width: 140px;
+    height: 200px;
+    background: url('../pictures_and_stuff/bender_frames36_framewidth200_delay-0.07s.png') left center;
+    background-size: cover;
+    animation: play 4.5s steps(36) infinite;
+    display: inline-block;
+}
+
+@keyframes play {
+    100% {background-position: -10332px;}
+}
