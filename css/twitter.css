@@ -25,13 +25,19 @@ header {
 a {
     color: var(--link-color);
 }
+
 .top-nav {
     background: var(--light-bg);
+    padding: 15px 0;
 }
+
 .nav {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
 }
 .nav-link {
     color: var(--main-link-color);
@@ -62,7 +68,16 @@ a {
 }
 .text-right {
     text-align: right;
+    justify-self: center;
 }
 .text-muted {
     color: var(--main-link-color);
+}
+
+.profile {
+    display: flex;
+}
+
+.profile-header {
+    margin-right: auto;
 }
