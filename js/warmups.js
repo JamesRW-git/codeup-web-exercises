@@ -71,25 +71,71 @@
 //Warmup 18 February 2022
 //Create a function which returns true if the given argument is a number, false if it is not a number
 
-function isANum (input) {
-    if (isNaN(parseFloat(input))) {
-    return false;
-    } else {
-        return true;
-    }
+// function isANum (input) {
+//     if (isNaN(parseFloat(input))) {
+//     return false;
+//     } else {
+//         return true;
+//     }
+// }
+//
+// let o = {}
+//
+// console.log(isANum('Here\'s a string to test'));
+// console.log(isANum('5'));
+// console.log(isANum(5));
+// console.log(isANum(-78));
+// console.log(isANum(true));
+// console.log(isANum(''));
+// console.log(isANum(null));
+// console.log(isANum(['array', 'test']));
+// console.log(isANum(o));
+
+
+// should print
+// [
+//     'mosquito',
+//     'scorpion',
+//     'mosquito',
+//     'typo',
+//     'reference error',
+//     'type error'
+// ]
+
+//My answer
+function removeAll(input, wordToRemove) {
+    input.forEach(function(word, i) {
+        if (word === wordToRemove) {
+            input.splice(i, i);
+        }
+    })
+    return input;
 }
 
-let o = {}
+var bugs = ["mosquito", "ant", "scorpion", "ant", "ant", "mosquito", "typo", "reference error", "type error"];
 
-console.log(isANum('Here\'s a string to test'));
-console.log(isANum('5'));
-console.log(isANum(5));
-console.log(isANum(-78));
-console.log(isANum(true));
-console.log(isANum(''));
-console.log(isANum(null));
-console.log(isANum(['array', 'test']));
-console.log(isANum(o));
+console.log(removeAll(bugs, "ant"));
 
+//Ry's answer
+//I like this better, uses a bucket to store anything that is not the word to remove
+// function removeAllAgain(anArr, valueToRemove) {
+//     let filteredArr = [];
+//     anArr.forEach(function(ele) {
+//         if (valueToRemove !== ele) {
+//             filteredArr.push(ele);
+//         }
+//         })
+//     return filteredArr;
+// }
+//
+// console.log(removeAllAgain(bugs, "ant"));
 
-
+function removeAllAgainAgain(anArr, valueToRemove) {
+    let filteredArr = [];
+    for (let i = 0; i < anArr.length; i++) {
+        if(valueToRemove === anArr[i]) {
+            continue;
+        }
+    }
+    return filteredArr;
+}
