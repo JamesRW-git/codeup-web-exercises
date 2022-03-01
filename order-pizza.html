@@ -37,18 +37,138 @@
         </div>
     </div>
 </nav>
-<section class="container">
-    <div class="jumbotron text" id="jumbotron-container">
-        <div class="pizzaImage">
-        <h1 class="display-4 text-center font-weight-bold text-black-50">Willkommen zu das Pizza mit Stiefelriemen</h1>
+
+<main class="mx-auto" style="width: 75%">
+    <section class="container-fluid">
+        <div class="jumbotron text" id="jumbotron-container">
+            <div class="pizzaImage">
+                <h1 class="display-4 text-center font-weight-bold opaqueRedText">Willkommen zu das Pizza mit
+                    Stiefelriemen</h1>
+            </div>
         </div>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-    </div>
-</section>
+
+        <h2>Build Your Pizza!</h2>
+
+        <!--NavTabs-->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="size-crust-nav" data-toggle="tab" href="#size-crust" role="tab"
+                   aria-controls="home"
+                   aria-selected="true">1. Size and Crust</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="cheesesauce-nav" data-toggle="tab" href="#cheese-sauce" role="tab"
+                   aria-controls="profile"
+                   aria-selected="false">2. Cheese and Sauce</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="toppings-nav" data-toggle="tab" href="#toppings" role="tab"
+                   aria-controls="contact"
+                   aria-selected="false">3. Toppings</a>
+            </li>
+        </ul>
 
 
+        <!--Main Body with selection tabs for crust, cheese/sauce, and toppings-->
+        <div class="tab-content" id="myTabContent">
+            <!--Size and Crust-->
+            <div class="tab-pane fade show active" id="size-crust" role="tabpanel" aria-labelledby="size-crust-nav">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Hand Tossed
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Garlic seasoned crust with sauerkraut filling</li>
+                        <li class="d-inline-block list-group-item">
+                            <input type="radio" id="hand_small" name="crust_size" value="handSmall">
+                            <label for="hand_small">Small(25cm)</label><br>
+                        </li>
+                        <li class="d-inline-block list-group-item">
+                            <input type="radio" id="hand_medium" name="crust_size" value="handMedium">
+                            <label for="hand_medium">Medium(30cm)</label><br>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Crispy Thin
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Schnitzel Crust</li>
+                        <li class="d-inline-block list-group-item ">
+                            <input type="radio" id="crispy_medium" name="crust_size" value="crispyMedium">
+                            <label for="crispy_medium">Medium(30cm)</label><br>
+                        </li>
+                        <li class="d-inline-block list-group-item">
+                            <input type="radio" id="crispy_large" name="crust_size" value="crispyLarge">
+                            <label for="crispy_large">Large(35cm)</label><br>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Cheese and Sauce-->
+            <!--Cheese-->
+            <div class="tab-pane fade" id="cheese-sauce" role="tabpanel" aria-labelledby="cheesesauce-nav">
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Cheese
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="list-group-item">How Much Delicious Cheese?</div>
+                            <div class="list-group-item">
+                                <form action="#">
+                                    <label for="cheese-choice">Cheese</label>
+                                    <select name="cheese-choice" id="cheese-choice">
+                                        <option value="lightcheese">Light</option>
+                                        <option value="normalcheese">Normal</option>
+                                        <option value="extracheese">ALL the Cheese, please</option>
+                                    </select>
+                                </form>
+                            </div>
+                    </ul>
+                </div>
+                <!--Sauce-->
+                <div class="card" style="width: 100%;">
+                    <div class="card-header">
+                        Sauce
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="list-group-item">
+                                <form action="#">
+                                    <label for="sauce-choice">What type of sauce?</label>
+                                    <select name="sauce-choice" id="sauce-choice">
+                                        <option value="tomatosauce">Tomato Sauce</option>
+                                        <option value="marinara">Marinara Sauce</option>
+                                        <option value="bbq">BBQ Sauce</option>
+                                        <option value="alfredo">Alfredo Sauce</option>
+                                    </select>
+                                </form>
+                            </div>
+                    </ul>
+                </div>
+            </div>
+
+            <!--Toppings-->
+            <div class="tab-pane fade show" id="toppings" role="tabpanel" aria-labelledby="toppings-nav">
+                <div class="card" style="width: 100%;">
+                    TOPPINGS GO HERE
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin=“anonymous”></script>
 </body>
 </html>

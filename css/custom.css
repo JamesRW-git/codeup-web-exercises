@@ -2,3 +2,12 @@
     background-image: url('../pictures_and_stuff/pizza.png');
     background-size: 100%
 }
+
+.opaqueRedText {
+    opacity: .70;
+    color: mediumslateblue;
+}
+
+#jumbotron-container {
+    padding: 0;
+}
