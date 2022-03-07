@@ -140,13 +140,25 @@ a {
     padding: 1% 0;
 }
 
-.who-to-follow {
+.makeMeBigger {
+    width: 100%;
+}
+
+#whofollow {
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    margin: 0 10px;
-    width: 20%;
-    padding: 1% 0;
+    flex-wrap: wrap;
+}
+
+.who-to-follow {
+    position: relative;
+    float: left;
+    width: calc(50% - 1em);
+    margin: .5em;
+}
+
+#first-who {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .media-image {
