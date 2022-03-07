@@ -105,6 +105,9 @@
                         </li>
                     </ul>
                 </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary btn-sm">Next Step ></a>
+                </div>
             </div>
 
             <!--Cheese and Sauce-->
@@ -149,16 +152,67 @@
                             </div>
                     </ul>
                 </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary btn-sm mr-1">< Previous Step</a>
+                    <a href="#" class="btn btn-primary btn-sm">Next Step ></a>
+                </div>
             </div>
 
             <!--Toppings-->
             <div class="tab-pane fade show" id="toppings" role="tabpanel" aria-labelledby="toppings-nav">
                 <div class="card" style="width: 100%;">
-                    TOPPINGS GO HERE
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Choose Meats
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="d-inline-block list-group-item ">
+                                <input type="checkbox" id="beef_meats" name="beef" value="beef">
+                                <label for="beef_meats">Beef Meats</label><br>
+                            </li>
+                            <li class="d-inline-block list-group-item">
+                                <input type="checkbox" id="ham_meats" name="ham" value="ham">
+                                <label for="ham_meats">Ham Meats</label><br>
+                            </li>
+                            <li class="d-inline-block list-group-item">
+                                <input type="checkbox" id="philly_meats" name="philly" value="philly">
+                                <label for="philly_meats">Philly Steak Meats</label><br>
+                            </li>
+                            <li class="d-inline-block list-group-item">
+                                <input type="checkbox" id="king_meats" name="bacon" value="bacon">
+                                <label for="king_meats">King of Meats (a.k.a. Bacon)</label><br>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card" style="width: 100%;">
+                        <div class="card-header">
+                            Choose Non-Meats
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="d-inline-block list-group-item ">
+                                <input type="checkbox" id="green_peppers" name="greenpeppers" value="greenpeppers">
+                                <label for="green_peppers">Green Peppers</label><br>
+                            </li>
+                            <li class="d-inline-block list-group-item">
+                                <input type="checkbox" id="mushrooms" name="shrooms" value="shrooms">
+                                <label for="mushrooms">Mushrooms</label><br>
+                            </li>
+                            <li class="d-inline-block list-group-item">
+                                <input type="checkbox" id="onions" name="onions" value="onions">
+                                <label for="onions">Onions</label><br>
+                            </li>
+                            <li class="d-inline-block list-group-item">
+                                <input type="checkbox" id="jalapenos" name="jalapenos" value="jalapenos">
+                                <label for="jalapenos">Jalapenos</label><br>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                <div class="card-footer d-flex justify-content-end">
+                    <a href="#" class="btn btn-primary btn-sm mr-1">< Previous Step</a>
+                </div>
+
             </div>
-
-
         </div>
     </section>
 </main>

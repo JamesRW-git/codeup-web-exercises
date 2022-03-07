@@ -1,6 +1,7 @@
 .pizzaImage {
     background-image: url('../pictures_and_stuff/pizza.png');
-    background-size: 100%
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .opaqueRedText {
