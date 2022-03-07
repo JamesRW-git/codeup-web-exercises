@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>March 7 Warmup</title>
+</head>
+<body>
+<!--TODO: Create an HTML file with only an unordered list with the id of pets in the body.
+Within an inline script declare and array called pets with four elements.
+Loop through the list and add each element as a list item to the ul.-->
+
+<ul id="list">
+
+</ul>
+
+<script>
+    let pets = [
+        'Horse',
+        'Capybara',
+        'Platypus',
+        'Dog'
+    ];
+
+    let petList = document.querySelector('#list');
+
+    for (var i = 0; i < pets.length; i++) {
+        let li = document.createElement('li'); //Creates li element for EACH element of the array
+        li.innerText = pets[i]; //Adds li tags to each element
+        petList.appendChild(li); //Adds each completed new li element to HTML
+    }
+
+
+</script>
+
+</body>
+</html>
