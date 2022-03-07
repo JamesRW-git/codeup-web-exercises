@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Page</title>
+</head>
+<body>
+<script>
+    "use strict";
+    (function() {
+        // Get the body element (notice we need to use index 0 of the array!)
+        var bodyElement = document.getElementsByTagName('body')[0];
+
+        // Change the body font color
+        bodyElement.style.color = '#444'; // Dark grey
+
+        bodyElement.style['background-color'] = "#fefefe"; // Very light grey
+        // We had to use [] syntax since the property name has a dash
+
+        bodyElement.style.fontFamily = "Helvetica, Verdana, Sans-Serif";
+        // Replace dashes with camelCase to use standard . syntax
+    })();
+</script>
+</body>
+</html>
