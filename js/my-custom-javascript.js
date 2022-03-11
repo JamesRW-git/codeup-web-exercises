@@ -2,7 +2,7 @@
 
 $('li').css('font-size', '20px');
 
-$('li, p, h1').css('color', '#870481');
+$('li, p, h1').css('background-color', '#fcf98b');
 
 let headerAlertVar = $('h1').html();
 
@@ -12,4 +12,4 @@ $('h1').click(function(){
 
 $('#theList').css('border', 'blue dashed .25rem');
 
-$('label').css('color', '#289448');
+$('label').css('backgcolor', '#289448');
