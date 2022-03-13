@@ -28,4 +28,8 @@ $(document).ready(function(){
             konamiPosition = 0;
         }
     })
+
+    $('#reset').click(function(){
+        location.reload();
+    })
 });
