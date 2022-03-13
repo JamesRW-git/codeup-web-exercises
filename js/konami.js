@@ -15,8 +15,11 @@ $(document).ready(function(){
             konamiPosition++;
             if (konamiPosition === konamillionaire.length) {
                 // alert('+30 LIVES, MANE. PLAY HARD')
-                $('#konamiCode').fadeOut(10000, function(){
+                $('#konamiCode').fadeOut(6000, function(){
                     $('#konamiCode').addClass('d-none');
+                    $('#music').append('<audio controls autoplay>' +
+                        '<source src="pictures_and_stuff/cripyoenthusiasm.mp3" type="audio/mp3">' +
+                    '</audio>');
                     $('#hiddenSnoop').removeClass('d-none');
                 });
                 konamiPosition = 0;
