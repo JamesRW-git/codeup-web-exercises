@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Attributes/Traversal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+    .invis {
+        visibility: hidden;
+    }
+    </style>
+
+</head>
+<body>
+<p>National Parks of the United States</p>
+<dl>
+    <dt>Wrangell-St. Elias, AK</dt>
+    <dd>8,323,146 acres</dd>
+
+    <dt>Gates of the Arctic, AK</dt>
+    <dd>7,523,897 acres</dd>
+
+    <dt>Denali, AK</dt>
+    <dd>4,740,911 acres</dd>
+
+    <dt>Katmai, AK</dt>
+    <dd>3,674,529 acres</dd>
+
+    <dt>Death Valley, CA</dt>
+    <dd>3,373,063 acres</dd>
+
+    <dt>Glacier Bay, AK</dt>
+    <dd>3,373,063 acres</dd>
+
+    <dt>Lake Clark, AK</dt>
+    <dd>3,223,383 acres</dd>
+
+    <dt>Yellowstone, WY-MT-ID</dt>
+    <dd>2,219,790 acres</dd>
+
+    <dt>Kobuk Valley, AK</dt>
+    <dd>1,750,716 acres</dd>
+
+    <dt>Everglades, FL</dt>
+    <dd>1,400,539 acres</dd>
+</dl>
+<script>
+    $('dd').addClass('invis');
+    $('dl').after('<button id="toggleButton">Toggler</button>');
+    $('#toggleButton').click(function(){
+        $('dd').toggleClass('invis');
+    })
+</script>
+</body>
+</html>
