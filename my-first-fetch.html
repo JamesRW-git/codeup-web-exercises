@@ -5,7 +5,7 @@
     <title>Fetch for Far Flung Functionality</title>
 </head>
 <body>
-<div id="weather"></div>
+<div id="drugs"></div>
 
 <script src="js/keys.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -13,30 +13,48 @@
 <script>
     //SO MUCH GLORIOUS DATA!!!
     //DO FETCH STUFF
+    let term = 'Acetaminophen';
     //fetch makes the request
-    let lat = 33.44
-    let lon = 94.04
-    let units = 'imperial'
     //could add together in the address to even further programmatically do this
-    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=4&lon=-94.04&units=imperial&appid=' + OWM_key)
+    fetch('https://api.fda.gov/drug/event.json?api_key=' + FDA_key + '&search=' + term)
         //no semicolons until the end because we're chaining
-    .then(response => response.json())
+        .then(response => response.json())
         //arrow function must have curly braces if you have more than one line of code in the body
-    .then(data => {
-        console.log(data.daily)
-        let html = '';
+        .then(data => {
+                console.log(data.results[0].patient.drug[0].medicinalproduct)
+                let html = '';
+                html += '<h2>' + term + '</h2>';
+                html += '<p>' + 'Contained in' + '</p>' + '<ul>';
+            for (let i = 0; i < data.results[0].patient.drug.length; i++) {
+                var includedIn = data.results[0].patient.drug[i].medicinalproduct
+                html += '<li>' + includedIn + '</li>';
+            }
 
-        html += '<ul>';
-        for (let i = 0; i < 5; i++) {
-            let dailyTemp = data.daily[i].temp.day
-            html += '<li>' + dailyTemp + '</li>';
-        }
+                html += '</ul>';
 
-        html += '</ul>';
+                $('#drugs').html(html);
+            });
 
-        $('#weather').html(html);
+    let term2 = 'Cellulose';
+    fetch('https://api.fda.gov/drug/event.json?api_key=' + FDA_key + '&search=' + term2)
+        //no semicolons until the end because we're chaining
+        .then(response => response.json())
+        //arrow function must have curly braces if you have more than one line of code in the body
+        .then(data => {
+            console.log(data.results[0].patient.drug[0].medicinalproduct)
+            let html = '';
+            html += '<h2>' + term2 + '</h2>';
+            html += '<p>' + 'Contained in' + '</p>' + '<ul>';
+            for (let i = 0; i < data.results[0].patient.drug.length; i++) {
+                var includedIn = data.results[0].patient.drug[i].medicinalproduct
+                html += '<li>' + includedIn + '</li>';
+            }
 
-    });
+            html += '</ul>';
+
+            $('#drugs').append(html);
+        });
+
 </script>
 
 </body>
