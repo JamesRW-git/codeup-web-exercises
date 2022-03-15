@@ -6,9 +6,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
-    .invis {
-        visibility: hidden;
-    }
+        .invis {
+            visibility: hidden;
+        }
     </style>
 
 </head>
@@ -44,13 +44,67 @@
 
     <dt>Everglades, FL</dt>
     <dd>1,400,539 acres</dd>
+
 </dl>
+
+
+<ul>
+    <h3>Oldest National Parks</h3>
+    <li>1872 - Yellowstone</li>
+    <li>1890 - Yosemite</li>
+    <li>1899 - Mount Rainier</li>
+    <li>1902 - Crater Lake</li>
+</ul>
+
+
+<ul>
+    <h3>Most Visited National Parks</h3>
+    <li>15.9m visits/year - Blue Ridge Parkway</li>
+    <li>14.1m visits/year - Great Smoky Mountains National Park</li>
+    <li>13.7m visits/year - Golden Gate National Recreation Area</li>
+    <li>9.1m visits/year - Gateway National Recreation Area</li>
+</ul>
+
+
+<ul>
+    <h3>Deaths from 2010-2020 (all causes)</h3>
+    <li>134 deaths - Grand Canyon, AZ</li>
+    <li>126 deaths - Yosemite, CA</li>
+    <li>92 deaths - Great Smoky Mountains, NC/TN</li>
+    <li>75 deaths -Sequoia & Kings Canyon, CA</li>
+</ul>
+
+<button id="clickyButton">Click Me</button>
+
 <script>
     $('dd').addClass('invis');
     $('dl').after('<button id="toggleButton">Toggler</button>');
-    $('#toggleButton').click(function(){
+    $('#toggleButton').click(function () {
         $('dd').toggleClass('invis');
     })
+
+    $('ul').addClass('ulist');
+    $('#clickyButton').click(function(){
+        if($('li:last-child').css('background-color') === 'rgba(0, 0, 0, 0)') {
+            console.log($('li:last-child').css('background-color'));
+            $('li:last-child').css('background-color', 'yellow');
+        } else {
+            $('li:last-child').css('background-color', 'rgba(0, 0, 0, 0)');
+        }
+    })
+
+    $('h3').click(function(){
+        if($(this).siblings('li').css('font-weight') === '400') {
+            $(this).siblings('li').css('font-weight', 'bold');
+        } else {
+            $(this).siblings('li').css('font-weight', '400');
+        }
+    })
+
+    $('li').click(function (){
+        $(this).siblings('li').first().css('color', 'blue');
+    })
+
 </script>
 </body>
 </html>
