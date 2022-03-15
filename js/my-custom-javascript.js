@@ -35,4 +35,5 @@ $(document).ready(function () {
         function(){
         $(this).css('color', 'rgba(0, 0, 0)');
         });
+
 })
