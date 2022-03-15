@@ -102,7 +102,7 @@
     })
 
     $('li').click(function (){
-        $(this).siblings('li').first().css('color', 'blue');
+        $(this).parent().children('li').first().css('color', 'blue');
     })
 
 </script>
