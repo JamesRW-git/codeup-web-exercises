@@ -42,40 +42,37 @@ function timeConverter(UNIX_timestamp){
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
-    var hour = a.getHours();
-    var min = a.getMinutes();
-    var sec = a.getSeconds();
-    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    var time = date + ' ' + month + ' ' + year;
     return time;
 }
 
 function renderTodaysForecast(forecast) {
     $('#locationName').append(`
-    <div>
+    <div style="background-color: slategray">
         <h3>Forecast for ${forecast.name}</h3>
         <p>Current Temperature is ${forecast.currentTemp} Fahrenheit</p>
     </div>
-    <div>
+    <div style="background-color: darkolivegreen">
         <h3>Forecast for Today: ${forecast.today}</h3>
         <p>High Temperature: ${forecast.todayForecastMaxTemp}</p>
         <p>Low Temperature: ${forecast.todayForecastMinTemp}</p>
     </div>
-    <div>
+    <div style="background-color: royalblue">
         <h3>Forecast for ${forecast.todayPlus1}</h3>
         <p>High Temperature: ${forecast.todayPlus1MaxTemp}</p>
         <p>Low Temperature: ${forecast.todayPlus1MinTemp}</p>
     </div>
-    <div>
+    <div style="background-color: darkolivegreen">
         <h3>Forecast for ${forecast.todayPlus2}</h3>
         <p>High Temperature: ${forecast.todayPlus2MaxTemp}</p>
         <p>Low Temperature: ${forecast.todayPlus2MinTemp}</p>
     </div>
-    <div>
+    <div style="background-color: royalblue">
         <h3>Forecast for ${forecast.todayPlus3}</h3>
         <p>High Temperature: ${forecast.todayPlus3MaxTemp}</p>
         <p>Low Temperature: ${forecast.todayPlus3MinTemp}</p>
     </div>
-    <div>
+    <div style="background-color: darkolivegreen">
         <h3>Forecast for ${forecast.todayPlus4}</h3>
         <p>High Temperature: ${forecast.todayPlus4MaxTemp}</p>
         <p>Low Temperature: ${forecast.todayPlus4MinTemp}</p>
