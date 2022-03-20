@@ -9,6 +9,8 @@ let units = 'imperial'
 let weatherDisplay;
 let windDirection;
 let currentWindAzimuth;
+let pressure;
+let time;
 //could add together in the address to even further programmatically do this
 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${OWM_key}`)
     //no semicolons until the end because we're chaining
@@ -18,9 +20,15 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&uni
     .then(data => renderTodaysForecast(data))
     .catch(err => console.error(err));
 
+fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${OWM_key}`)
+    .then(response => response.json())
+    .then(response => getSanitizedData(response))
+    .then(data => renderFiveDayForecast(data))
+    .catch(err => console.error(err));
+
 //Sanitizes data from API request
 function getSanitizedData(dataBody) {
-    console.log(dataBody)
+    console.log(dataBody.daily);
     return {
         name: dataBody.alerts[0].sender_name,
         currentTemp: dataBody.current.temp,
@@ -28,19 +36,10 @@ function getSanitizedData(dataBody) {
         todayForecastMinTemp: dataBody.daily[0].temp.min,
         today: timeConverter(dataBody.daily[0].dt),
         currentWeatherType: dataBody.current.weather[0].main,
-        currentWindAzimuth: dataBody.current.wind_deg
-        // todayPlus1MaxTemp: dataBody.daily[1].temp.max,
-        // todayPlus1MinTemp: dataBody.daily[1].temp.min,
-        // todayPlus1: timeConverter(dataBody.daily[1].dt),
-        // todayPlus2MaxTemp: dataBody.daily[2].temp.max,
-        // todayPlus2MinTemp: dataBody.daily[2].temp.min,
-        // todayPlus2: timeConverter(dataBody.daily[2].dt),
-        // todayPlus3MaxTemp: dataBody.daily[3].temp.max,
-        // todayPlus3MinTemp: dataBody.daily[3].temp.min,
-        // todayPlus3: timeConverter(dataBody.daily[3].dt),
-        // todayPlus4MaxTemp: dataBody.daily[4].temp.max,
-        // todayPlus4MinTemp: dataBody.daily[4].temp.min,
-        // todayPlus4: timeConverter(dataBody.daily[4].dt)
+        currentWindAzimuth: dataBody.current.wind_deg,
+        currentWindSpeed: dataBody.current.wind_speed,
+        currentPressure: dataBody.current.pressure,
+        dailyForecast: dataBody.daily //Current day is at index 0, tomorrow index 1, day after tomorrow index 2, etc.
     };
 }
 
@@ -51,14 +50,14 @@ function timeConverter(UNIX_timestamp) {
     var year = a.getFullYear();
     var month = months[a.getMonth()];
     var date = a.getDate();
-    var time = date + ' ' + month + ' ' + year;
+    time = date + ' ' + month + ' ' + year;
     return time;
 }
 
 //Converts wind direction from azimuth to English
 function convertWindDirection(azimuth) {
     windDirection = `${currentWindAzimuth}`;
-    if(azimuth >= 0 && azimuth <= 22.5) {
+    if (azimuth >= 0 && azimuth <= 22.5) {
         return windDirection = 'North';
     } else if (azimuth > 22.5 && azimuth <= 45) {
         return windDirection = 'North-northeast';
@@ -95,7 +94,7 @@ function convertWindDirection(azimuth) {
 
 //Converts weather type to corresponding image
 function convertWeatherTypeToImg(weatherType) {
-    if(weatherType === 'Clear') {
+    if (weatherType === 'Clear') {
         weatherDisplay = `<img src="/pictures_and_stuff/clear.webp" alt="sunny day with a pretty sunflower">`
     } else if (weatherType === 'Thunderstorm') {
         weatherDisplay = `<img src="/pictures_and_stuff/thunderstorm.jpeg" alt="thunderstorm over a cabin">`
@@ -103,27 +102,32 @@ function convertWeatherTypeToImg(weatherType) {
         weatherDisplay = `<img src="/pictures_and_stuff/drizzle.webp" alt="rain into a man's hand">`
     } else if (weatherType === 'Rain') {
         weatherDisplay = `<img src="/pictures_and_stuff/rain.jpeg" alt="rain into a puddle">`
-    } else if(weatherType === 'Snow') {
+    } else if (weatherType === 'Snow') {
         weatherDisplay = `<img src="/pictures_and_stuff/snow.jpeg" alt="snowy cabins">`
-    } else if(weatherType === 'Fog') {
+    } else if (weatherType === 'Fog') {
         weatherDisplay = `<img src="/pictures_and_stuff/fog.jpeg" alt="foggy forest">`
-    } else if(weatherType === 'Mist') {
+    } else if (weatherType === 'Mist') {
         weatherDisplay = `<img src="/pictures_and_stuff/mist.jpeg" alt="mist">`
-    } else if(weatherType === 'Smoke') {
+    } else if (weatherType === 'Smoke') {
         weatherDisplay = `<img src="/pictures_and_stuff/smoke.webp" alt="smoke">`
-    } else if(weatherType === 'Haze') {
+    } else if (weatherType === 'Haze') {
         weatherDisplay = `<img src="/pictures_and_stuff/haze.jpeg" alt="hazy woods">`
-    } else if(weatherType === 'Dust' || forecast.currentWeatherType === 'Sand') {
+    } else if (weatherType === 'Dust' || forecast.currentWeatherType === 'Sand') {
         weatherDisplay = `<img src="/pictures_and_stuff/dust.jpeg" alt="dusty area">`
-    } else if(weatherType === 'Ash') {
+    } else if (weatherType === 'Ash') {
         weatherDisplay = `<img src="/pictures_and_stuff/ash.jpeg" alt="volcanic ash">`
-    } else if(weatherType === 'Squall') {
+    } else if (weatherType === 'Squall') {
         weatherDisplay = `<img src="/pictures_and_stuff/squall.jpeg" alt="squall">`
-    } else if(weatherType === 'Tornado') {
+    } else if (weatherType === 'Tornado') {
         weatherDisplay = `<img src="/pictures_and_stuff/tornado.webp" alt="tornado">`
-    } else if(weatherType === 'Clouds') {
+    } else if (weatherType === 'Clouds') {
         weatherDisplay = `<img src="/pictures_and_stuff/clouds.jpeg" alt="clouds">`
     }
+}
+
+//Converts atmospheric pressure in hectopascals to inches mercury
+function convertHpaToMerc(hPa) {
+    return pressure = (hPa * 0.029529983071445).toFixed(2);
 }
 
 function renderTodaysForecast(forecast) {
@@ -131,26 +135,52 @@ function renderTodaysForecast(forecast) {
     convertWeatherTypeToImg(`${forecast.currentWeatherType}`)
     //Converts wind direction for current weather
     convertWindDirection(`${forecast.currentWindAzimuth}`)
+    //Convert pressure to inches mercury
+    convertHpaToMerc(`${forecast.currentPressure}`)
     $('#locationName').append(`
-    <div class="card" style="width: 18rem;">
+    <div class="card col" style="width: 20rem;">
         ${weatherDisplay}
-        <div class="card-body">
+        <div class="card-body p-3 border bg-light">
             <h3 class="card-text">Current Weather in ${forecast.name}</h3>
-            <p class="card-text">Current Temperature is ${forecast.currentTemp}°F</p>
-            <p class="card-text">Current Wind Direction is ${windDirection}</p>
+            <hr>
+            <p class="card-text mb-1">Weather Conditions: ${forecast.currentWeatherType}</p>
+            <p class="card-text mb-1">Temperature: ${forecast.currentTemp}°F</p>
+            <p class="card-text mb-1">Wind Direction: ${windDirection}</p>
+            <p class="card-text mb-1">Wind Speed: ${forecast.currentWindSpeed} mph</p>
+            <p class="card-text mb-0">Pressure: ${pressure} inHg</p>
         </div>
     </div>`
     )
 }
-    // <div>
-    //     <h3>Forecast for ${forecast.name}</h3>
-    //     <p>Current Temperature is ${forecast.currentTemp} Fahrenheit</p>
-    // </div>
-    // <div>
-    //     <h3>Forecast for Today ${forecast.today}</h3>
-    //     <p>High Temperature: ${forecast.todayForecastMaxTemp}°F</p>
-    //     <p>Low Temperature: ${forecast.todayForecastMinTemp}°F</p>
-    // </div>
+
+function renderFiveDayForecast(forecast) {
+    console.log(forecast.dailyForecast[0].weather[0].main)
+    forecast.dailyForecast.forEach(function (day, i) {
+        if (i <= 5) {
+        timeConverter(`${forecast.dailyForecast[i].dt}`);
+        //Selects picture to display for current weather
+        convertWeatherTypeToImg(`${forecast.dailyForecast[i].weather[0].main}`);
+        //Converts wind direction for current weather
+        convertWindDirection(`${forecast.dailyForecast[i].wind_deg}`);
+        //Convert pressure to inches mercury
+        convertHpaToMerc(`${forecast.dailyForecast[i].pressure}`);
+        $('#forecast').append(`
+    <div class="card col" style="width: 18rem;">
+        ${weatherDisplay}
+        <div class="card-body">
+            <h5 class="card-text text-nowrap">Forecast for <span class="text-primary">${time}</span></h5>
+            <hr>
+            <p class="card-text mb-1 text-nowrap">Weather Conditions: ${forecast.dailyForecast[i].weather[0].main}</p>
+            <p class="card-text mb-1 text-nowrap">High Temperature: ${forecast.dailyForecast[i].temp.max}°F</p>
+            <p class="card-text mb-1 text-nowrap">Low Temperature: ${forecast.dailyForecast[i].temp.min}°F</p>
+            <p class="card-text mb-1 text-nowrap">Wind Direction: ${windDirection}</p>
+            <p class="card-text mb-1 text-nowrap">Wind Speed: ${forecast.dailyForecast[i].wind_speed} mph</p>
+            <p class="card-text mb-0 text-nowrap">Pressure: ${pressure} inHg</p>
+        </div>
+    </div>`
+        )
+    }})
+}
 
 
 // <div style="background-color: royalblue" class="cardTypeThing">
