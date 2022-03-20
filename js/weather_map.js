@@ -95,33 +95,33 @@ function convertWindDirection(azimuth) {
 //Converts weather type to corresponding image
 function convertWeatherTypeToImg(weatherType) {
     if (weatherType === 'Clear') {
-        weatherDisplay = `<img src="/pictures_and_stuff/clear.webp" alt="sunny day with a pretty sunflower">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/clear.webp" alt="sunny day with a pretty sunflower">`
     } else if (weatherType === 'Thunderstorm') {
-        weatherDisplay = `<img src="/pictures_and_stuff/thunderstorm.jpeg" alt="thunderstorm over a cabin">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/thunderstorm.jpeg" alt="thunderstorm over a cabin">`
     } else if (weatherType === 'Drizzle') {
-        weatherDisplay = `<img src="/pictures_and_stuff/drizzle.webp" alt="rain into a man's hand">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/drizzle.webp" alt="rain into a man's hand">`
     } else if (weatherType === 'Rain') {
-        weatherDisplay = `<img src="/pictures_and_stuff/rain.jpeg" alt="rain into a puddle">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/rain.jpeg" alt="rain into a puddle">`
     } else if (weatherType === 'Snow') {
-        weatherDisplay = `<img src="/pictures_and_stuff/snow.jpeg" alt="snowy cabins">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/snow.jpeg" alt="snowy cabins">`
     } else if (weatherType === 'Fog') {
-        weatherDisplay = `<img src="/pictures_and_stuff/fog.jpeg" alt="foggy forest">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/fog.jpeg" alt="foggy forest">`
     } else if (weatherType === 'Mist') {
-        weatherDisplay = `<img src="/pictures_and_stuff/mist.jpeg" alt="mist">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/mist.jpeg" alt="mist">`
     } else if (weatherType === 'Smoke') {
-        weatherDisplay = `<img src="/pictures_and_stuff/smoke.webp" alt="smoke">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/smoke.webp" alt="smoke">`
     } else if (weatherType === 'Haze') {
-        weatherDisplay = `<img src="/pictures_and_stuff/haze.jpeg" alt="hazy woods">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/haze.jpeg" alt="hazy woods">`
     } else if (weatherType === 'Dust' || forecast.currentWeatherType === 'Sand') {
-        weatherDisplay = `<img src="/pictures_and_stuff/dust.jpeg" alt="dusty area">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/dust.jpeg" alt="dusty area">`
     } else if (weatherType === 'Ash') {
-        weatherDisplay = `<img src="/pictures_and_stuff/ash.jpeg" alt="volcanic ash">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/ash.jpeg" alt="volcanic ash">`
     } else if (weatherType === 'Squall') {
-        weatherDisplay = `<img src="/pictures_and_stuff/squall.jpeg" alt="squall">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/squall.jpeg" alt="squall">`
     } else if (weatherType === 'Tornado') {
-        weatherDisplay = `<img src="/pictures_and_stuff/tornado.webp" alt="tornado">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/tornado.webp" alt="tornado">`
     } else if (weatherType === 'Clouds') {
-        weatherDisplay = `<img src="/pictures_and_stuff/clouds.jpeg" alt="clouds">`
+        weatherDisplay = `<img class="weather-pic mx-auto" src="/pictures_and_stuff/clouds.jpeg" alt="clouds">`
     }
 }
 
@@ -130,6 +130,7 @@ function convertHpaToMerc(hPa) {
     return pressure = (hPa * 0.029529983071445).toFixed(2);
 }
 
+//Renders the current weather conditions
 function renderTodaysForecast(forecast) {
     //Selects picture to display for current weather
     convertWeatherTypeToImg(`${forecast.currentWeatherType}`)
@@ -153,6 +154,7 @@ function renderTodaysForecast(forecast) {
     )
 }
 
+//Renders forecast for current day and next five days
 function renderFiveDayForecast(forecast) {
     console.log(forecast.dailyForecast[0].weather[0].main)
     forecast.dailyForecast.forEach(function (day, i) {

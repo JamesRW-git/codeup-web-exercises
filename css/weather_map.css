@@ -11,3 +11,7 @@
     height: 20%
 }
 
+.weather-pic {
+    height: 13rem;
+    width: 15rem;
+}
