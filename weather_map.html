@@ -18,9 +18,16 @@
     </style>
 </head>
 <body>
-<div class="d-flex justify-content-center my-5">
+<div class="d-flex justify-content-start my-5 ms-4 ps-5">
     <img class="weather-logo" src="/pictures_and_stuff/weather4u.png" alt="weather4u's terrible logo">
 </div>
+<section class="d-flex justify-content-center">
+    <div class="locationInput d-flex justify-content-end">
+        <input class="mb-2" type="text" id="newLocation" placeholder="Enter Location...">
+        <button class="mb-2" id="changeLocation">Search Location</button>
+    </div>
+</section>
+
 <section class="d-flex justify-content-center">
     <div id='map' class="d-flex"></div>
 </section>
@@ -38,10 +45,10 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <!-- Mapbox-->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-<!--MapBox JS-->
-<script src="js/weather_map_mapbox.js"></script>
 <!--GeoCoder Utils-->
 <script src="js/geocoder-utils.js"></script>
+<!--MapBox JS-->
+<script src="js/weather_map_mapbox.js"></script>
 <!--Weather Map Script-->
 <script src="js/weather_map.js"></script>
 </body>

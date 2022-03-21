@@ -2,9 +2,9 @@
 
 const options = {method: 'GET', headers: {Accept: 'application/json'}};
 //New Orleans is LAT: 29.97 LON: -90.08
-let lat = 29.97;
-let lon = -90.08;
-let units = 'imperial'
+let lat = startingLat;
+let lon = startingLon;
+let units = 'imperial';
 //Default Weather Image
 let weatherDisplay;
 let windDirection;
