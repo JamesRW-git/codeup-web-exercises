@@ -17,7 +17,7 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&uni
     .then(response => response.json())
     //arrow function must have curly braces if you have more than one line of code in the body
     .then(response => getSanitizedData(response))
-    .then(data => renderTodaysForecast(data))
+    .then(data => renderCurrentWeather(data))
     .catch(err => console.error(err));
 
 fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=${units}&appid=${OWM_key}`)
@@ -28,7 +28,6 @@ fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&uni
 
 //Sanitizes data from API request
 function getSanitizedData(dataBody) {
-    console.log(dataBody.daily);
     return {
         name: dataBody.alerts[0].sender_name,
         currentTemp: dataBody.current.temp,
@@ -39,6 +38,7 @@ function getSanitizedData(dataBody) {
         currentWindAzimuth: dataBody.current.wind_deg,
         currentWindSpeed: dataBody.current.wind_speed,
         currentPressure: dataBody.current.pressure,
+        currentHumidity: dataBody.current.humidity,
         dailyForecast: dataBody.daily //Current day is at index 0, tomorrow index 1, day after tomorrow index 2, etc.
     };
 }
@@ -131,7 +131,7 @@ function convertHpaToMerc(hPa) {
 }
 
 //Renders the current weather conditions
-function renderTodaysForecast(forecast) {
+function renderCurrentWeather(forecast) {
     //Selects picture to display for current weather
     convertWeatherTypeToImg(`${forecast.currentWeatherType}`)
     //Converts wind direction for current weather
@@ -149,6 +149,7 @@ function renderTodaysForecast(forecast) {
             <p class="card-text mb-1">Wind Direction: ${windDirection}</p>
             <p class="card-text mb-1">Wind Speed: ${forecast.currentWindSpeed} mph</p>
             <p class="card-text mb-0">Pressure: ${pressure} inHg</p>
+            <p class="card-text mb-0">Humidity: ${forecast.currentHumidity}%</p>
         </div>
     </div>`
     )
@@ -156,9 +157,10 @@ function renderTodaysForecast(forecast) {
 
 //Renders forecast for current day and next five days
 function renderFiveDayForecast(forecast) {
-    console.log(forecast.dailyForecast[0].weather[0].main)
+    // console.log(forecast.dailyForecast[0].weather[0].main)
     forecast.dailyForecast.forEach(function (day, i) {
         if (i <= 5) {
+        //Returns date in human
         timeConverter(`${forecast.dailyForecast[i].dt}`);
         //Selects picture to display for current weather
         convertWeatherTypeToImg(`${forecast.dailyForecast[i].weather[0].main}`);
@@ -177,34 +179,14 @@ function renderFiveDayForecast(forecast) {
             <p class="card-text mb-1 text-nowrap">Low Temperature: ${forecast.dailyForecast[i].temp.min}°F</p>
             <p class="card-text mb-1 text-nowrap">Wind Direction: ${windDirection}</p>
             <p class="card-text mb-1 text-nowrap">Wind Speed: ${forecast.dailyForecast[i].wind_speed} mph</p>
-            <p class="card-text mb-0 text-nowrap">Pressure: ${pressure} inHg</p>
+            <p class="card-text mb-1 text-nowrap">Pressure: ${pressure} inHg</p>
+            <p class="card-text mb-1 text-nowrap">Humdity: ${forecast.dailyForecast[i].humidity}%</p>
         </div>
     </div>`
         )
     }})
 }
 
-
-// <div style="background-color: royalblue" class="cardTypeThing">
-//     <h3>Forecast for ${forecast.todayPlus1}</h3>
-//     <p>High Temperature: ${forecast.todayPlus1MaxTemp}°F</p>
-//     <p>Low Temperature: ${forecast.todayPlus1MinTemp}°F</p>
-// </div>
-// <div style="background-color: darkolivegreen" class="cardTypeThing">
-//     <h3>Forecast for ${forecast.todayPlus2}</h3>
-//     <p>High Temperature: ${forecast.todayPlus2MaxTemp}°F</p>
-//     <p>Low Temperature: ${forecast.todayPlus2MinTemp}°F</p>
-// </div>
-// <div style="background-color: royalblue" class="cardTypeThing">
-//     <h3>Forecast for ${forecast.todayPlus3}</h3>
-//     <p>High Temperature: ${forecast.todayPlus3MaxTemp}°F</p>
-//     <p>Low Temperature: ${forecast.todayPlus3MinTemp}°F</p>
-// </div>
-// <div style="background-color: darkolivegreen" class="cardTypeThing">
-//     <h3>Forecast for ${forecast.todayPlus4}</h3>
-//     <p>High Temperature: ${forecast.todayPlus4MaxTemp}°F</p>
-//     <p>Low Temperature: ${forecast.todayPlus4MinTemp}°F</p>
-// </div>
 
 
 
