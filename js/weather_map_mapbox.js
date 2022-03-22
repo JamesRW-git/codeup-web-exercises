@@ -10,7 +10,7 @@ let marker;
 let currentLocation = [mapLon, mapLat];
 let placeName;
 
-
+//Sets initial marker
 marker = createMarker(currentLocation);
 
 //Function to create map
@@ -26,6 +26,7 @@ function initMap(lon, lat) {
     });
 }
 
+//Function to create a marker
 function createMarker(coordinates) {
     if (marker) {
         marker.remove();
@@ -35,8 +36,8 @@ function createMarker(coordinates) {
         .addTo(map);
 }
 
+//Click event for searching location with input field
 $("#changeLocation").click(function () {
-    console.log('Change Location Mapbox Clicked')
     geocode($("#newLocation").val(), MAP_key).then(function (result) {
         map.setCenter(result);
         map.setZoom(10);
@@ -46,15 +47,6 @@ $("#changeLocation").click(function () {
         currentLocation.unshift(result[0]);
         lat = currentLocation[1];
         lon = currentLocation[0];
-        geoCoderSearch = {lat: lat, lon: lon}
-        // reverseGeocode(geoCoderSearch, MAP_key).then(function (result) {
-        //     console.log(result)
-        //     if(result.length !== 0) {
-        //         placeName = result;
-        //     } else {
-        //         placeName = 'Location'
-        //     }
-        // })
         marker = createMarker({lat, lon});
         $('#forecast').html("");
         $('#locationName').html("");
@@ -62,19 +54,10 @@ $("#changeLocation").click(function () {
     })
 });
 
-
+//Click event for clicking on the map to get a new location
 map.on('click', function (e) {
     marker = createMarker([e.lngLat.lng, e.lngLat.lat]);
     getData(e.lngLat.lat, e.lngLat.lng);
-    geoCoderSearch = {lat: e.lngLat.lat, lng: e.lngLat.lng};
-    // reverseGeocode(geoCoderSearch, MAP_key).then(function (result) {
-    //     if(result.length !== 0) {
-    //         placeName = result;
-    //     } else {
-    //         placeName = 'Location'
-    //     }
-    //     }
-    // )
 })
 
 

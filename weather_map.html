@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Weather4U</title>
@@ -23,9 +23,9 @@
     </style>
 </head>
 <body>
-<div class="d-flex justify-content-around my-5 ms-4 ps-5">
+<div class="d-flex justify-content-between my-5 ms-4 ps-5">
     <img class="weather-logo" src="/pictures_and_stuff/weather4u.png" alt="weather4u's terrible logo">
-    <h1 class="my-auto fw-bolder ramaraja fst-italic">Is it ugly? Yes. <br> Does it work? Also yes.<span class="text-danger">&trade;</span></h1>
+    <h1 class="my-auto fw-bolder ramaraja fst-italic me-4">Is it ugly? Yes. <br> Does it work? Also yes.<span class="text-danger">&trade;</span></h1>
 </div>
 <section class="mt-5 mb-3 d-flex justify-content-center setWidth80 mx-auto">
     <div id="locationName" class="d-flex justify-content-center"> </div><!--class="d-flex justify-content-center"-->
@@ -42,6 +42,13 @@
 <section class="mt-5 d-flex justify-content-center">
     <div id="forecast" class="d-flex justify-content-center row row-cols-2 row-cols-lg-5 g-2 g-lg-3"></div>
 </section>
+<footer class="mt-4">
+    <div class="footer-div d-flex">
+        <h4 class="align-self-center my-auto">Presented Courtesy of James R. Woodward</h4>
+        <img id="github" class="icon my-auto" src="/pictures_and_stuff/github_logo.png" alt="github logo">
+        <img id="codeup" class="icon-smaller my-auto" src="/pictures_and_stuff/codeuptransparent.png" alt="codeup logo">
+    </div>
+</footer>
 
 <!--API Keys-->
 <script src="js/keys.js"></script>

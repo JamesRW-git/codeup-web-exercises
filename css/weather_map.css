@@ -8,6 +8,20 @@ body {
     background-repeat: no-repeat;
 }
 
+.icon {
+    height: 5rem;
+    width: 5rem;
+}
+
+.icon-smaller {
+    height: 3.5rem;
+    width: 3.5rem;
+}
+
+.footer-div {
+    height: 5rem;
+}
+
 .weather-logo{
     width: 10rem;
     height:10rem;
