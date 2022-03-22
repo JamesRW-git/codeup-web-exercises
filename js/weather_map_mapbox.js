@@ -13,6 +13,9 @@ let placeName;
 //Sets initial marker
 marker = createMarker(currentLocation);
 
+//Enables draggable marker
+marker.setDraggable(true);
+
 //Function to create map
 function initMap(lon, lat) {
     mapboxgl.accessToken = MAP_key;
@@ -60,4 +63,7 @@ map.on('click', function (e) {
     getData(e.lngLat.lat, e.lngLat.lng);
 })
 
+marker.on('dragend', function(e) {
+    getData(e.target._lngLat.lat, e.target._lngLat.lng);
+})
 
