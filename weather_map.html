@@ -8,33 +8,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/weather_map.css">
+
     <style>
         #map {
             /* the width and height may be set to any size */
-            width: 80%;
+            width: 100%;
             height: 700px;
         }
     </style>
 </head>
 <body>
-<div class="d-flex justify-content-start my-5 ms-4 ps-5">
+<div class="d-flex justify-content-around my-5 ms-4 ps-5">
     <img class="weather-logo" src="/pictures_and_stuff/weather4u.png" alt="weather4u's terrible logo">
+    <h1 class="my-auto fw-bolder ramaraja fst-italic">Is it ugly? Yes. <br> Does it work? Also yes.<span class="text-danger">&trade;</span></h1>
 </div>
+<section class="mt-5 mb-3 d-flex justify-content-center setWidth80 mx-auto">
+    <div id="locationName" class="d-flex justify-content-center"> </div><!--class="d-flex justify-content-center"-->
+</section>
 <section class="d-flex justify-content-center">
-    <div class="locationInput d-flex justify-content-end">
-        <input class="mb-2" type="text" id="newLocation" placeholder="Enter Location...">
-        <button class="mb-2" id="changeLocation">Search Location</button>
+    <div id='map' class="d-flex mx-1"></div>
+</section>
+<section class="d-flex justify-content-center">
+    <div class="setWidth80 d-flex justify-content-end">
+        <input class="my-2 me-1" type="text" id="newLocation" placeholder="Enter Location...">
+        <button class="my-2" id="changeLocation">Search Location</button>
     </div>
 </section>
-
-<section class="d-flex justify-content-center">
-    <div id='map' class="d-flex"></div>
-</section>
 <section class="mt-5 d-flex justify-content-center">
-    <div id="locationName" class="d-flex justify-content-center"></div>
-</section>
-<section class="mt-5 d-flex">
     <div id="forecast" class="d-flex justify-content-center row row-cols-2 row-cols-lg-5 g-2 g-lg-3"></div>
 </section>
 
