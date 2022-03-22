@@ -204,7 +204,6 @@ function renderCurrentWeather(forecast) {
     )
 }
 
-
 //Renders forecast for current day and next five days
 //language=HTML
 function renderFiveDayForecast(forecast) {
@@ -245,10 +244,12 @@ function renderFiveDayForecast(forecast) {
     })
 }
 
+//Sets click event on Github logo that links to my Github
 $('#github').click(function (){
     window.open('https://github.com/JamesRW-git');
 })
 
+//Sets click event on Codeup logo that links to Codeup website
 $('#codeup').click(function (){
     window.open('https://codeup.com/')
 })

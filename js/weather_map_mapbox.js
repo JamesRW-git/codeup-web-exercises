@@ -8,7 +8,6 @@ mapboxgl.accessToken = MAP_key;
 let map = initMap(mapLon, mapLat);
 let marker;
 let currentLocation = [mapLon, mapLat];
-let placeName;
 
 //Sets initial marker
 marker = createMarker(currentLocation);
@@ -63,6 +62,7 @@ map.on('click', function (e) {
     getData(e.lngLat.lat, e.lngLat.lng);
 })
 
+//Sets event for when you finish dragging the marker it will pull new data for that location
 marker.on('dragend', function(e) {
     getData(e.target._lngLat.lat, e.target._lngLat.lng);
 })
