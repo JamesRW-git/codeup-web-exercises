@@ -33,7 +33,7 @@ function createMarker(coordinates) {
     if (marker) {
         marker.remove();
     }
-    return new mapboxgl.Marker()
+    return new mapboxgl.Marker({draggable: true})
         .setLngLat(coordinates)
         .addTo(map);
 }
@@ -59,6 +59,9 @@ $("#changeLocation").click(function () {
 //Click event for clicking on the map to get a new location
 map.on('click', function (e) {
     marker = createMarker([e.lngLat.lng, e.lngLat.lat]);
+    marker.on('dragend', function(e) {
+        getData(e.target._lngLat.lat, e.target._lngLat.lng);
+    })
     getData(e.lngLat.lat, e.lngLat.lng);
 })
 

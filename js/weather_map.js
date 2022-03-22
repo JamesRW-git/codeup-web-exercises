@@ -10,7 +10,6 @@ let windDirection;
 let currentWindAzimuth;
 let pressure;
 let time;
-let geoCoderSearch = {};
 
 //Initializes Data (without this no weather data is available until a new location is set)
 getData(mapLat, mapLon);
