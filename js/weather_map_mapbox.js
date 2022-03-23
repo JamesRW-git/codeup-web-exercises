@@ -50,6 +50,9 @@ $("#changeLocation").click(function () {
         lat = currentLocation[1];
         lon = currentLocation[0];
         marker = createMarker({lat, lon});
+        marker.on('dragend', function(e) {
+            getData(e.target._lngLat.lat, e.target._lngLat.lng);
+        })
         $('#forecast').html("");
         $('#locationName').html("");
         getData(lat, lon);
